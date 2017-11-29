@@ -105,73 +105,46 @@ page-emiratesid {
     width: 100%;
     &.emirates-id-1 {
       background: url("#{$image-path}emirates-id-1.png") no-repeat 0 0;
-      background-size: contain;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
+      background-size: 100%;
     }
     &.emirates-id-1a {
       background: url("#{$image-path}emirates-id-1-a.png") no-repeat 0 0;
-      background-size: contain;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
+      background-size: 100%;
     }
     &.emirates-id-2 {
       background: url("#{$image-path}emirates-id-2.png") no-repeat 0 0;
-      background-size: contain;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
+      background-size: 100%;
     }
     &.emirates-id-3 {
       background: url("#{$image-path}emirates-id-3.png") no-repeat 0 0;
-      background-size: contain;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
+      background-size: 100%;
     }
     &.emirates-id-4 {
       background: url("#{$image-path}emirates-id-4.png") no-repeat 0 0;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
-      background-size: contain;
+      background-size: 100%;
 
     }
 
     &.passport-1 {
       background: url("#{$image-path}passport-1.png") no-repeat 0 0;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
-      background-size: cover;
+      background-size: 100%;
 
     }
 
     &.passport-2 {
       background: url("#{$image-path}passport-2.png") no-repeat 0 0;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
-      background-size: cover;
+      background-size: 100%;
     }
 
 
     &.camera-1 {
       background: url("#{$image-path}camera-1.png") no-repeat 0 0;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
-      background-size: contain;
+      background-size: 100%;
     }
 
     &.camera-2 {
       background: url("#{$image-path}camera-2.png") no-repeat 0 0;
-      @include bp-xxs-min{
-        background-size: cover;
-      }
-      background-size: contain;
+      background-size: 100%;
     }
 
 

@@ -213,38 +213,33 @@
 
           <div class="rak-select-items ">
             <div class="rak-select-item-25">
-              <div class="select-style">
-                <select name="" id="days"
-                        formControlName="passportDay"
-                        [(ngModel)]="selectedDay"
-                >
-                  <option *ngFor="let item of dobDays" [ngValue]="item">{{item}}</option>
 
-
-                </select>
+              <div class="select-style-1">
+                <ion-select [(ngModel)]="selectedDay"
+                            formControlName="passportDay"
+                            [selectOptions]="selectDaysOptions">
+                  <ion-option *ngFor="let item of dobDays" [value]="item">{{item }}</ion-option>
+                </ion-select>
               </div>
 
             </div>
             <div class="rak-select-item-25">
-              <div class="select-style">
-                <select name="" id="months"
-                        formControlName="passportMonth"
-                        [(ngModel)]="selectedMonth"
-                >
-                  <option *ngFor="let item of dobMonths" [ngValue]="item">{{item}}</option>
-
-                </select>
+              <div class="select-style-1">
+                <ion-select [(ngModel)]="selectedMonth"
+                            formControlName="passportMonth"
+                            [selectOptions]="selectedMonthOptions">
+                  <ion-option *ngFor="let item of dobMonths" [value]="item">{{item}}</ion-option>
+                </ion-select>
               </div>
             </div>
             <div class="rak-select-item-50">
-              <div class="select-style">
-                <select name="" id="year"
-                        formControlName="passportDOB"
-                        [(ngModel)]="selectedDOB"
-                >
-                  <option *ngFor="let item of dobYears" [ngValue]="item">{{item }}</option>
+              <div class="select-style-1 select-style-1-last">
 
-                </select>
+                <ion-select [(ngModel)]="selectedDOB"
+                            formControlName="passportDOB"
+                            [selectOptions]="selectedYearsOptions">
+                  <ion-option *ngFor="let item of dobYears" [value]="item">{{item}}</ion-option>
+                </ion-select>
               </div>
             </div>
           </div>
@@ -257,13 +252,23 @@
 
           <div class="rak-select-items ">
             <div class="rak-select-item-100">
-              <div class="select-style">
-                <select name="" id="passportGender"
-                        [(ngModel)]="selectedGender"
-                        formControlName="passportGender">
-                  <option *ngFor="let item of genders" [ngValue]="item">{{item }}</option>
-                </select>
+
+              <div class="select-style-1 select-style-1-last">
+                <ion-select [(ngModel)]="selectedGender"
+                            formControlName="passportGender"
+                            [selectOptions]="selectedGenderOptions">
+                  <ion-option *ngFor="let item of genders" [value]="item">{{item}}</ion-option>
+                </ion-select>
               </div>
+
+
+              <!--<div class="select-style">-->
+                <!--<select name="" id="passportGender"-->
+                        <!--[(ngModel)]="selectedGender"-->
+                        <!--formControlName="passportGender">-->
+                  <!--<option *ngFor="let item of genders" [ngValue]="item">{{item }}</option>-->
+                <!--</select>-->
+              <!--</div>-->
 
             </div>
 
@@ -298,39 +303,35 @@
 
         <div class="rak-select-items ">
           <div class="rak-select-item-25">
-            <div class="select-style">
-              <select name="" id="passportIssueday"
-                      formControlName="passportIssueDay"
-                      [(ngModel)]="selectedPassportIssueDay"
-              >
-                <option *ngFor="let item of passportIssueDays" [ngValue]="item">{{item}}</option>
-
-
-              </select>
+            <div class="select-style-1">
+              <ion-select [(ngModel)]="selectedPassportIssueDay"
+                          formControlName="passportIssueDay"
+                          [selectOptions]="selectDaysOptions">
+                <ion-option *ngFor="let item of passportIssueDays" [value]="item">{{item }}</ion-option>
+              </ion-select>
             </div>
-
           </div>
           <div class="rak-select-item-25">
-            <div class="select-style">
-              <select name="" id="passportIssueMonth"
-                      formControlName="passportIssueMonth"
-                      [(ngModel)]="selectedPassportIssueMonth"
-              >
-                <option *ngFor="let item of passportIssueMonths" [ngValue]="item">{{item}}</option>
-
-              </select>
+            <div class="select-style-1">
+              <ion-select [(ngModel)]="selectedPassportIssueMonth"
+                          formControlName="passportIssueMonth"
+                          [selectOptions]="selectedMonthOptions">
+                <ion-option *ngFor="let item of passportIssueMonths" [value]="item">{{item}}</ion-option>
+              </ion-select>
             </div>
+
           </div>
           <div class="rak-select-item-50">
-            <div class="select-style">
-              <select name="" id="passportIssueYear"
-                      formControlName="passportIssueYear"
-                      [(ngModel)]="selectedPassportIssueYear"
-              >
-                <option *ngFor="let item of passportIssueYears" [ngValue]="item">{{item }}</option>
 
-              </select>
+            <div class="select-style-1 select-style-1-last">
+
+              <ion-select [(ngModel)]="selectedPassportIssueYear"
+                          formControlName="passportIssueYear"
+                          [selectOptions]="selectedYearsOptions">
+                <ion-option *ngFor="let item of passportIssueYears" [value]="item">{{item}}</ion-option>
+              </ion-select>
             </div>
+
           </div>
         </div>
       </div>
@@ -346,39 +347,38 @@
 
           <div class="rak-select-items ">
             <div class="rak-select-item-25">
-              <div class="select-style">
-                <select name="" id="passportExpireDay"
-                        formControlName="passportExpireDay"
-                        [(ngModel)]="selectedPassportExpireDay"
-                >
-                  <option *ngFor="let item of passportExpireDays" [ngValue]="item">{{item}}</option>
 
-
-                </select>
+              <div class="select-style-1">
+                <ion-select [(ngModel)]="selectedPassportExpireDay"
+                            formControlName="passportExpireDay"
+                            [selectOptions]="selectDaysOptions">
+                  <ion-option *ngFor="let item of passportExpireDays" [value]="item">{{item }}</ion-option>
+                </ion-select>
               </div>
 
             </div>
             <div class="rak-select-item-25">
-              <div class="select-style">
-                <select name="" id="passportExpireMonth"
-                        formControlName="passportExpireMonth"
-                        [(ngModel)]="selectedPassportExpireMonth"
-                >
-                  <option *ngFor="let item of passportExpireMonths" [ngValue]="item">{{item}}</option>
 
-                </select>
+              <div class="select-style-1">
+                <ion-select [(ngModel)]="selectedPassportExpireMonth"
+                            formControlName="passportExpireMonth"
+                            [selectOptions]="selectedMonthOptions">
+                  <ion-option *ngFor="let item of passportExpireMonths" [value]="item">{{item}}</ion-option>
+                </ion-select>
               </div>
+
             </div>
             <div class="rak-select-item-50">
-              <div class="select-style">
-                <select name="" id="passportExpireYear"
-                        formControlName="passportExpireYear"
-                        [(ngModel)]="selectedPassportExpireYear"
-                >
-                  <option *ngFor="let item of passportExpireYears" [ngValue]="item">{{item }}</option>
 
-                </select>
+              <div class="select-style-1 select-style-1-last">
+
+                <ion-select [(ngModel)]="selectedPassportExpireYear"
+                            formControlName="passportExpireYear"
+                            [selectOptions]="selectedYearsOptions">
+                  <ion-option *ngFor="let item of passportExpireYears" [value]="item">{{item}}</ion-option>
+                </ion-select>
               </div>
+
             </div>
           </div>
         </div>

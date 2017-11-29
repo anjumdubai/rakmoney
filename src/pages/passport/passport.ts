@@ -33,43 +33,45 @@ export class PassportPage {
   step4 = false;
 
   //create Years DOB
-  dobYears =[];
+  dobYears = [];
   selectedDOB;
   //create Months
-  dobMonths =[];
+  dobMonths = [];
   selectedMonth;
   //create Days
-  dobDays =[];
+  dobDays = [];
   selectedDay;
 
 
-
   //create Years Passport Issue
-  passportIssueYears =[];
+  passportIssueYears = [];
   selectedPassportIssueYear;
   //create Months
-  passportIssueMonths =[];
+  passportIssueMonths = [];
   selectedPassportIssueMonth;
   //create Days
-  passportIssueDays =[];
+  passportIssueDays = [];
   selectedPassportIssueDay;
 
 
-
   //create Years Passport Expire
-  passportExpireYears =[];
+  passportExpireYears = [];
   selectedPassportExpireYear;
   //create Months
-  passportExpireMonths =[];
+  passportExpireMonths = [];
   selectedPassportExpireMonth;
   //create Days
-  passportExpireDays =[];
+  passportExpireDays = [];
   selectedPassportExpireDay;
 
   //Gender
-  genders =['Male', 'Female'];
+  genders = ['Male', 'Female'];
   selectedGender;
 
+  selectDaysOptions;
+  selectedMonthOptions;
+  selectedYearsOptions;
+  selectedGenderOptions;
 
 
 
@@ -81,13 +83,35 @@ export class PassportPage {
     this.getFormData();
     this.generateDOBValues();
     this.generatePassportIssueValues();
-    this.generatePassportExpireValues()
+    this.generatePassportExpireValues();
+    this.selectedGender = this.genders[0];
 
-    this.selectedGender = this.genders[0]
 
+    this.setSelectedOptionsForDropdown()
   }
 
   ionViewDidLoad() {
+
+  }
+
+
+  setSelectedOptionsForDropdown() {
+    this.selectDaysOptions = {
+      title: 'Day',
+    };
+    this.selectedMonthOptions = {
+      title: 'Month',
+    };
+
+    this.selectedYearsOptions = {
+      title: 'Year',
+    };
+
+    this.selectedGenderOptions = {
+      title: 'Gender',
+    };
+
+
 
   }
 
@@ -253,12 +277,6 @@ export class PassportPage {
       ],
 
 
-
-
-
-
-
-
     });
   }
 
@@ -310,52 +328,50 @@ export class PassportPage {
   }
 
 
-  generateDOBValues(){
+  generateDOBValues() {
     //create year for DOB
     this.createYears(60, this.dobYears);
     this.selectedDOB = this.dobYears[28];
 
 
     //create Months for DOB
-    this.createNumbers(1,12, this.dobMonths);
+    this.createNumbers(1, 12, this.dobMonths);
     this.selectedMonth = this.dobMonths[0];
 
 
     //create Days for DOB
-    this.createNumbers(1,31, this.dobDays);
+    this.createNumbers(1, 31, this.dobDays);
     this.selectedDay = this.dobDays[0];
 
   }
 
 
-  generatePassportIssueValues(){
+  generatePassportIssueValues() {
 
     this.createYears(20, this.passportIssueYears);
     this.selectedPassportIssueYear = this.passportIssueYears[20];
 
-    this.createNumbers(1,12, this.passportIssueMonths);
+    this.createNumbers(1, 12, this.passportIssueMonths);
     this.selectedPassportIssueMonth = this.passportIssueMonths[0];
 
-    this.createNumbers(1,31, this.passportIssueDays);
+    this.createNumbers(1, 31, this.passportIssueDays);
     this.selectedPassportIssueDay = this.passportIssueDays[0];
 
   }
 
 
-  generatePassportExpireValues(){
+  generatePassportExpireValues() {
 
     this.createYears(20, this.passportExpireYears);
     this.selectedPassportExpireYear = this.passportExpireYears[20];
 
-    this.createNumbers(1,12, this.passportExpireMonths);
+    this.createNumbers(1, 12, this.passportExpireMonths);
     this.selectedPassportExpireMonth = this.passportExpireMonths[0];
 
-    this.createNumbers(1,31, this.passportExpireDays);
+    this.createNumbers(1, 31, this.passportExpireDays);
     this.selectedPassportExpireDay = this.passportExpireDays[0];
 
   }
-
-
 
 
   createYears(minYear, myVar) {

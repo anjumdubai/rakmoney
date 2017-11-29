@@ -92,16 +92,13 @@
 
         <div class="rak-select-items">
           <div class="rak-select-item-25">
-            <div class="select-style">
-              <select name="" id="1"
-                      formControlName="countryCode"
-                      [(ngModel)]="selectedCountryCodes"
-                      (ngModelChange)="onCountryChanges()"
-              >
-                <option *ngFor="let item of countryCodes" [ngValue]="item">{{item.code }}</option>
-
-              </select>
-            </div>
+             <div class="select-style-1">
+              <ion-select [(ngModel)]="selectedCountryCodes"
+                          formControlName="countryCode"
+                          [selectOptions]="selectPhonePre">
+                <ion-option *ngFor="let item of countryCodes" [value]="item">{{item.code }}</ion-option>
+              </ion-select>
+             </div>
 
           </div>
           <div class="rak-select-item-75">

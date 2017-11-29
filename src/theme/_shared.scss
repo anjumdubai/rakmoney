@@ -40,6 +40,39 @@
         flex-grow: 1;
       }
 
+      .select-style-1{
+        position: relative;
+        .select-md,
+        .select-ios {
+          padding: 2px 5px 8px 0;
+          border-bottom: 1px solid #c8c7cc;
+          margin: .5rem 2rem .5rem 0;
+          font-size: 1.6rem;
+          max-width: inherit;
+          font-family: 'SFUIMedium';
+          font-size: 1.6rem;
+          .select-icon{
+            .select-icon-inner{display: none}
+            &:before{
+              font-family: "rakicon";
+              content: "\e912";
+              position: absolute;
+              top: 17%;
+              right: 0;
+              font-size: 1.5rem;
+              display: inline-block;
+              color: color($colors, brand_black);
+
+            }
+          }
+        }
+        &.select-style-1-last{
+          .select-md,
+          .select-ios {
+            margin: .5rem 0rem .5rem 0;}
+        }
+      }
+
       .select-style {
         padding-bottom: 5px;
         border-bottom: 1px solid #ccc;
@@ -62,6 +95,8 @@
           color: color($colors, brand_black);
 
         }
+
+
 
       }
       .select-style select {
@@ -312,8 +347,19 @@ ion-content.content {
 
 
 *:focus {
-  outline: 0;
+  outline: none;
 }
+
+
+input[type=tel]:focus ,
+input[type=email]:focus ,
+input[type=number]:focus ,
+input:focus {
+  outline:none;
+  outline:0;
+
+}
+
 
 
 .show-when-focuse{
@@ -372,3 +418,5 @@ ion-content.content {
 .back {
   transform: rotateY(180deg);
 }
+
+

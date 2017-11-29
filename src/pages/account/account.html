@@ -59,7 +59,11 @@
 
     <form [formGroup]="DetailsOneForm">
       <div class="rak-input-password-holder">
-        <ion-item class="rak-input ">
+        <ion-item class="rak-input rak-input-no-icon "
+
+                  [class.rak-input-error]="!DetailsOneForm.controls.password1.valid && (DetailsOneForm.controls.password1.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.password1.valid && (DetailsOneForm.controls.password1.dirty || submitAttempt)"
+        >
           <ion-label floating>Password Validation</ion-label>
 
           <ion-input
@@ -92,11 +96,19 @@
 
         </div>
 
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.password1.valid && (DetailsOneForm.controls.password1.dirty || submitAttempt)">
+          Please enter valid password
+        </div>
+
       </div>
 
 
       <div class="rak-input-password-holder">
-        <ion-item class="rak-input ">
+        <ion-item class="rak-input rak-input-no-icon"
+                  [class.rak-input-error]="!DetailsOneForm.controls.password2.valid && (DetailsOneForm.controls.password2.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.password2.valid && (DetailsOneForm.controls.password2.dirty || submitAttempt)"
+        >
           <ion-label floating>Confirm Password</ion-label>
           <ion-input
             type="{{showPassConfirm?'text':'password'}}"
@@ -117,7 +129,10 @@
           <div>
             <div class="rak-input-message-error" [ngClass]="{'showMessage' : showMessage}">Password doesn't match</div>
           </div>
-
+        </div>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.password2.valid && (DetailsOneForm.controls.password2.dirty || submitAttempt)">
+          Please enter valid password
         </div>
       </div>
     </form>

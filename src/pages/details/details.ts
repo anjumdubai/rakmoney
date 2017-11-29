@@ -21,7 +21,8 @@ export class DetailsPage {
   submitAttempt: boolean = false;
   showContentDetails = true;
   showContentActivation = false;
-  validator
+  validator;
+  selectPhonePre
 
   selectedCountryCodes;
   countryCodes = [
@@ -43,6 +44,11 @@ export class DetailsPage {
 
     this.selectedCountryCodes = this.countryCodes[0];
 
+
+
+    this.selectPhonePre = {
+      title: 'Country Prefix',
+    };
 
     this.DetailsOneForm = formBuilder.group({
       nameEmiratesID: ['',

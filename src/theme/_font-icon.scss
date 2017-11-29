@@ -24,6 +24,24 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
+[class^="icon-"],
+[class*="icon-"],
+[class^="ion-ios-icon"],
+[class*="ion-ios-icon"],
+[class^="ion-md-icon"],
+[class*="ion-md-icon"]{
+  @extend .ion;
+  font-family: 'rakicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
 .rakiconrak-checkbox-active .path1:before {
   content: "\e900";
   color: rgb(77, 77, 76);

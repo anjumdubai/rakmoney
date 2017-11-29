@@ -16,13 +16,9 @@
     padding: 0;
     margin-bottom: 10px;
     background: transparent;
-
-
-
     &.item-block:first-child {
       border-top: none;
     }
-
     &.rak-input-inline {
       margin-bottom: 0;
       min-height: 3.5rem;
@@ -88,6 +84,11 @@
           top: 2px;
         }
       }
+      &.rak-input-no-icon{
+        ion-input:after {
+          display: none;
+        }
+      }
     }
 
     &.rak-input-error {
@@ -115,6 +116,12 @@
       &.rak-input-inline ion-input {
         &:after {
           top: 2px;
+        }
+      }
+
+      &.rak-input-no-icon{
+        ion-input:after {
+          display: none;
         }
       }
 
