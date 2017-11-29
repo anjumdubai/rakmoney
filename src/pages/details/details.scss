@@ -1,0 +1,65 @@
+page-details {
+
+}
+
+.rak-header-holder {
+  background: #fff;
+
+  .rak-header-navigation {
+    text-align: center;
+    position: relative;
+    font-weight: 400;
+    font-size: 1.8rem;
+    padding-bottom: 1rem;
+    span {
+      position: absolute;
+      left: 0;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.sms-code-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8rem;
+
+  .sms-code-block {
+    position: relative;
+    margin: 2rem 0 2rem 2.5rem;
+    input.sms-code-validator {
+      //padding-left: 27px;
+      letter-spacing: 32px;
+      border: 0;
+
+      width: 210px;
+      background-color: transparent;
+      font-weight: normal;
+      font-size: 30px;
+
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 200px;
+      height: 5px;
+      left: 0;
+      color: red;
+      background-size: 50px 1px;
+      background-repeat: repeat-x;
+      background-position-x: 0px;
+      background-image: linear-gradient(to left, color($colors, brand_grey_2) 50%, rgba(255, 255, 255, 0) 0%);
+      background-position: top;
+      bottom: -8px;
+
+    }
+  }
+  .sms-code-resend {
+    font-size: 1.6rem;
+    color: color($colors, brand_grey_1);
+  }
+
+}
+

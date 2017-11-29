@@ -1,0 +1,217 @@
+<ion-content>
+
+
+  <div class="rak-header-holder" padding>
+
+    <h3 class="rak-header-navigation">
+      <span (click)="goBack()"><i class="rakiconrak-back-arrow"></i></span>
+      Details
+    </h3>
+
+
+    <ul class="rak-breadcrumbs">
+      <li class="">
+        <!-- rak-breadcrumbs-active -->
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>01</span>
+            <b>Details</b>
+          </a>
+        </div>
+      </li>
+      <li class="">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>02</span>
+            <b>Emirates ID</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>03</span>
+            <b>Passport</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>04</span>
+            <b>Photo</b>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>05</span>
+            <b>Account</b>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!--Header Ends-->
+  <div class="page-body-start" [ngClass]="{'show-body': showContentDetails}"  >
+    <h1 class="rak-heading-2">Enter your details here</h1>
+
+    <p *ngIf="submitAttempt" class="submitAttempt">Please fill out all details accurately.</p>
+
+    <form [formGroup]="DetailsOneForm">
+
+      <!--Name Field Start-->
+      <ion-list>
+        <ion-item class="rak-input "
+                  [class.rak-input-error]="!DetailsOneForm.controls.nameEmiratesID.valid && (DetailsOneForm.controls.nameEmiratesID.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.nameEmiratesID.valid && (DetailsOneForm.controls.nameEmiratesID.dirty || submitAttempt)"
+        >
+          <ion-label floating>Name as per Emirates ID</ion-label>
+          <ion-input type="text"
+                     value=""
+                     formControlName="nameEmiratesID">
+          </ion-input>
+        </ion-item>
+
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.nameEmiratesID.valid && (DetailsOneForm.controls.nameEmiratesID.dirty || submitAttempt)">
+          Please enter your full name as per Emirates ID
+        </div>
+      </ion-list>
+      <!--Name Field End-->
+
+
+      <!--Phone Number Field Start-->
+      <div class="rak-select-holder">
+        <div class="rak-select-label">
+          Phone Number
+        </div>
+
+        <div class="rak-select-items">
+          <div class="rak-select-item-25">
+            <div class="select-style">
+              <select name="" id="1"
+                      formControlName="countryCode"
+                      [(ngModel)]="selectedCountryCodes"
+                      (ngModelChange)="onCountryChanges()"
+              >
+                <option *ngFor="let item of countryCodes" [ngValue]="item">{{item.code }}</option>
+
+              </select>
+            </div>
+
+          </div>
+          <div class="rak-select-item-75">
+            <ion-item class="rak-input rak-input-inline "
+
+                      [class.rak-input-error]="!DetailsOneForm.controls.phoneNumber.valid && (DetailsOneForm.controls.phoneNumber.dirty || submitAttempt)"
+                      [class.rak-input-valid]="DetailsOneForm.controls.phoneNumber.valid && (DetailsOneForm.controls.phoneNumber.dirty || submitAttempt)"
+            >
+              <ion-input
+                type='tel'
+                name="number"
+                formControlName="phoneNumber"
+                placeholder="55-365-8947"
+                [(ngModel)]="DetailsOneForm.phoneNumber"
+                (ngModelChange)="onMobileNumberBlur($event)"
+                value=""></ion-input>
+            </ion-item>
+          </div>
+        </div>
+
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.phoneNumber.valid && (DetailsOneForm.controls.phoneNumber.dirty || submitAttempt)">
+          Please enter valid phone number
+        </div>
+      </div>
+
+      <!--Phone Number Field End-->
+
+
+      <!--Email  Field Start-->
+      <ion-list>
+        <ion-item class="rak-input "
+                  [class.rak-input-error]="!DetailsOneForm.controls.emailAddress.valid && (DetailsOneForm.controls.emailAddress.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.emailAddress.valid && (DetailsOneForm.controls.emailAddress.dirty || submitAttempt)"
+        >
+          <ion-label floating>Email</ion-label>
+          <ion-input type="email" value=""
+                     formControlName="emailAddress"
+          ></ion-input>
+        </ion-item>
+
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.emailAddress.valid && (DetailsOneForm.controls.emailAddress.dirty || submitAttempt)">
+          Enter correct email format: user@example.com
+        </div>
+      </ion-list>
+      <!--Email  Field End-->
+
+
+      <!--Send activation Code button Start-->
+      <div class="button-holder-center">
+        <button ion-button round class="rak-button-active rak-button-full" (click)="sendActivationCode()"
+                color="primary">Send Activation Code
+        </button>
+      </div>
+      <!--Send activation Code button End-->
+    </form>
+  </div>
+
+
+
+  <!--Activation code -->
+  <div class="page-body-start" [ngClass]="{'show-body': showContentActivation}">
+    <h1 class="rak-heading-2">Enter activation code received by SMS or Email</h1>
+
+
+    <div class="sms-code-holder">
+      <div class="sms-code-block">
+        <input class="sms-code-validator" type="tel"
+               [(ngModel)]="validator"
+
+               (ngModelChange)="isValidator($event)"
+               maxlength="4"/>
+      </div>
+      <div class="sms-code-resend">
+        Did not receive code? <a href="">Resend OTP</a>
+      </div>
+    </div>
+
+
+    <div class="user-number-edit">
+      <ul>
+        <li>
+          <div class="first-block">
+            <div class="first-block-icon-holder">
+              <ion-icon name="phone-portrait"></ion-icon>
+            </div>
+            {{selectedCountryCodes.code}} {{DetailsOneForm.value.phoneNumber}}
+          </div>
+          <div class="second-block">
+            <ion-icon name="create" color="primary"></ion-icon>
+            <a href="" (click)="edit($event)"> Edit</a>
+          </div>
+        </li>
+        <li>
+          <div class="first-block">
+            <div class="first-block-icon-holder">
+              <ion-icon name="mail"></ion-icon>
+            </div>
+            {{DetailsOneForm.value.emailAddress}}
+          </div>
+          <div class="second-block">
+            <ion-icon name="create" color="primary"></ion-icon>
+            <a href="" (click)="edit($event)"> Edit</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+
+</ion-content>

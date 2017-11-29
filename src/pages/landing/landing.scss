@@ -1,0 +1,75 @@
+page-landing {
+
+  //ion-content.content {
+  //  background: $body-background;
+
+
+    .landing-page-holder{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    .landing-title {
+      h1 {
+        text-align: center;
+        margin: 5rem 0 3rem!important;
+        span {
+          background: url("#{$image-path}logo-rak-money-transfer.png") center center no-repeat;
+          background-size: contain;
+          max-width: 278px;
+          min-width: 278px;
+          min-height: 36px;
+          display: inline-block;
+          text-align: center;
+          text-indent: -9999cm;
+        }
+      }
+    }
+
+    h2 {
+      font-size: 2.4rem;
+      font-weight: 400;
+      text-align: center;
+      width: 100%;
+      margin: 4rem 0 4rem;
+      color: color($colors, brand_black);
+      font-family: "SFUILight";
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        button{
+          font-family:"SFUISemibold"
+        }
+      }
+    }
+
+    .powered-by{
+      text-align: center;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: color($colors, brand_grey_1);
+      span{
+        width: 90px;
+        height: 18px;
+        display: inline-block;
+        background: url("#{$image-path}logo.png") center center no-repeat;
+        background-size: contain;
+      }
+
+    }
+ // }
+}

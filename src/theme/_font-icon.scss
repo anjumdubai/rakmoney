@@ -1,0 +1,163 @@
+@font-face {
+  font-family: 'rakicon';
+  src: url('#{$font-path}/rakicon.eot?44tf6d');
+  src: url('#{$font-path}/rakicon.eot?44tf6d#iefix') format('embedded-opentype'),
+  url('#{$font-path}/rakicon.ttf?44tf6d') format('truetype'),
+  url('#{$font-path}/rakicon.woff?44tf6d') format('woff'),
+  url('#{$font-path}/rakicon.svg?44tf6d#rakicon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="rakicon"], [class*=" rakicon"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rakicon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rakiconrak-checkbox-active .path1:before {
+  content: "\e900";
+  color: rgb(77, 77, 76);
+}
+
+.rakiconrak-checkbox-active .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-camera .path1:before {
+  content: "\e902";
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-camera .path2:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(236, 29, 36);
+}
+
+.rakiconsave-it .path1:before {
+  content: "\e904";
+  color: rgb(236, 29, 36);
+}
+
+.rakiconsave-it .path2:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconsave-it .path3:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconsave-it .path4:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-cam:before {
+  content: "\e908";
+  color: #ec1d24;
+}
+
+.rakiconrak-back-arrow:before {
+  content: "\e909";
+  color: #ec1d24;
+}
+
+.rakiconrak-check:before {
+  content: "\e90a";
+  color: #fff;
+}
+
+.rakiconcheckbox-inactive:before {
+  content: "\e90b";
+  color: #000;
+}
+
+.rakiconrak-success .path1:before {
+  content: "\e90c";
+  color: rgb(110, 192, 21);
+}
+
+.rakiconrak-success .path2:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-error:before {
+  content: "\e90e";
+  color: #d77567;
+}
+
+.rakiconrak-eye-close:before {
+  content: "\e90f";
+  color: #828684;
+}
+
+.rakiconrak-eye-open:before {
+  content: "\e910";
+  color: #828684;
+}
+
+.rakiconrak-up-arrow:before {
+  content: "\e911";
+}
+
+.rakiconrak-down-arrow:before {
+  content: "\e912";
+}
+
+.rakiconrak-upload-file-failer .path1:before {
+  content: "\e913";
+  color: rgb(224, 85, 65);
+}
+
+.rakiconrak-upload-file-failer .path2:before {
+  content: "\e914";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-upload-file-failer .path3:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-upload-file-success .path1:before {
+  content: "\e916";
+  color: rgb(110, 192, 21);
+}
+
+.rakiconrak-upload-file-success .path2:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-upload-file-success .path3:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+
+.rakiconrak-upload-file:before {
+  content: "\e919";
+  color: #828684;
+}

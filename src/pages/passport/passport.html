@@ -1,0 +1,479 @@
+<ion-content>
+
+  <div class="rak-header-holder" padding>
+
+    <h3 class="rak-header-navigation">
+      <span (click)="goBack()"><i class="rakiconrak-back-arrow"></i></span>
+      Passport
+    </h3>
+
+
+    <ul class="rak-breadcrumbs">
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>01</span>
+            <b>Details</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>02</span>
+            <b>Emirates ID</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-live">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>03</span>
+            <b>Passport</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>04</span>
+            <b>Photo</b>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>05</span>
+            <b>Account</b>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!--Passport -->
+
+  <div class="page-body-start no-padding show-body height-100" *ngIf="showContent1"  >
+    <div class="dummy-images-holder">
+
+      <!--Passport 01-->
+      <!--<div class="dummy-images-top" (click)="gotoPhoto('showImage2')" [ngClass]="{'show-image': showImage1}">-->
+      <div class="dummy-images-top show-image">
+        <!--<div class="image-frame passport-1">-->
+        <!--</div>-->
+
+        <div class="flip-container " [ngClass]="{'flip': showImage2}">
+          <div class="flipper">
+            <div class="front" (click)="gotoPhoto('showImage2')" >
+              <div class="image-frame passport-1">
+              </div>
+            </div>
+            <div class="back" (click)="showScanningFail()"  >
+              <div class="image-frame passport-2">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--Passport 02-->
+      <!--<div class="dummy-images-top " >-->
+        <!--<div class="image-frame passport-2">-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="dummy-images-button">
+        <div class="rak-heading-3">Position your Passport (First Page) in the frame</div>
+        <ul class="rak-navigation">
+          <li class="" [ngClass]="{'rak-navigation-completed': frontCompleted}">
+            <div>
+              <a href="">
+                <span *ngIf="!frontCompleted">Front</span>
+                <img src="assets/imgs/passport-2.png" alt="" *ngIf="frontCompleted">
+              </a>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Scanning failed-->
+  <div class="page-body-start show-body"   *ngIf="showContent2">
+
+    <h1 class="rak-heading-2">Scanning failed </h1>
+    <h1 class="rak-heading-2">Please fill in the information from your Passport </h1>
+
+    <p *ngIf="submitAttempt" class="submitAttempt">Please fill out all details accurately.</p>
+    <form [formGroup]="DetailsOneForm">
+
+
+      <div class="rak-from-element-holder">
+
+
+
+        <ion-item class="rak-input "
+                  [class.rak-input-error]="!DetailsOneForm.controls.passportType.valid && (DetailsOneForm.controls.passportType.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.passportType.valid && (DetailsOneForm.controls.passportType.dirty || submitAttempt)"
+        >
+          <ion-label floating>Passport Type</ion-label>
+          <ion-input type="text"
+                     formControlName="passportType"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.passportType.valid && (DetailsOneForm.controls.passportType.dirty || submitAttempt)">
+          Please enter your Passport Type
+        </div>
+
+
+
+
+
+
+        <ion-item class="rak-input"
+                  [class.rak-input-error]="!DetailsOneForm.controls.passportNumber.valid && (DetailsOneForm.controls.passportNumber.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.passportNumber.valid && (DetailsOneForm.controls.passportNumber.dirty || submitAttempt)"
+        >
+          <ion-label floating>Passport Number</ion-label>
+          <ion-input type="text"
+                     formControlName="passportNumber"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.passportNumber.valid && (DetailsOneForm.controls.passportNumber.dirty || submitAttempt)">
+          Please enter your Passport Type
+        </div>
+
+
+
+
+
+        <ion-item class="rak-input"
+                  [class.rak-input-error]="!DetailsOneForm.controls.passportSurname.valid && (DetailsOneForm.controls.passportSurname.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.passportSurname.valid && (DetailsOneForm.controls.passportSurname.dirty || submitAttempt)"
+        >
+          <ion-label floating>Surname / Family Name</ion-label>
+          <ion-input type="text"
+                     formControlName="passportSurname"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.passportSurname.valid && (DetailsOneForm.controls.passportSurname.dirty || submitAttempt)">
+          Please enter your Surname / Family Name
+        </div>
+
+
+
+
+        <ion-item class="rak-input"
+                  [class.rak-input-error]="!DetailsOneForm.controls.passportFirstName.valid && (DetailsOneForm.controls.passportFirstName.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.passportFirstName.valid && (DetailsOneForm.controls.passportFirstName.dirty || submitAttempt)"
+        >
+          <ion-label floating>First Name(s) / Given Names</ion-label>
+          <ion-input type="text"
+                     formControlName="passportFirstName"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.passportFirstName.valid && (DetailsOneForm.controls.passportFirstName.dirty || submitAttempt)">
+          Please enter your First Name(s) / Given Names
+        </div>
+
+
+
+        <ion-item class="rak-input"
+                  [class.rak-input-error]="!DetailsOneForm.controls.passportNationality.valid && (DetailsOneForm.controls.passportNationality.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.passportNationality.valid && (DetailsOneForm.controls.passportNationality.dirty || submitAttempt)"
+        >
+          <ion-label floating>Nationality</ion-label>
+          <ion-input type="text"
+                     formControlName="passportNationality"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.passportNationality.valid && (DetailsOneForm.controls.passportNationality.dirty || submitAttempt)">
+          Please enter your Nationality
+        </div>
+
+
+
+
+
+
+        <div class="rak-select-holder margin-top-3">
+          <div class="rak-select-label">
+            Date of Birth
+          </div>
+
+          <div class="rak-select-items ">
+            <div class="rak-select-item-25">
+              <div class="select-style">
+                <select name="" id="days"
+                        formControlName="passportDay"
+                        [(ngModel)]="selectedDay"
+                >
+                  <option *ngFor="let item of dobDays" [ngValue]="item">{{item}}</option>
+
+
+                </select>
+              </div>
+
+            </div>
+            <div class="rak-select-item-25">
+              <div class="select-style">
+                <select name="" id="months"
+                        formControlName="passportMonth"
+                        [(ngModel)]="selectedMonth"
+                >
+                  <option *ngFor="let item of dobMonths" [ngValue]="item">{{item}}</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="rak-select-item-50">
+              <div class="select-style">
+                <select name="" id="year"
+                        formControlName="passportDOB"
+                        [(ngModel)]="selectedDOB"
+                >
+                  <option *ngFor="let item of dobYears" [ngValue]="item">{{item }}</option>
+
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rak-select-holder margin-top-3">
+          <div class="rak-select-label">
+            Gender
+          </div>
+
+          <div class="rak-select-items ">
+            <div class="rak-select-item-100">
+              <div class="select-style">
+                <select name="" id="passportGender"
+                        [(ngModel)]="selectedGender"
+                        formControlName="passportGender">
+                  <option *ngFor="let item of genders" [ngValue]="item">{{item }}</option>
+                </select>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+        <ion-item class="rak-input"
+                  [class.rak-input-error]="!DetailsOneForm.controls.passportPlaceOfBirth.valid && (DetailsOneForm.controls.passportPlaceOfBirth.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.passportPlaceOfBirth.valid && (DetailsOneForm.controls.passportPlaceOfBirth.dirty || submitAttempt)"
+        >
+          <ion-label floating>Place of Birth</ion-label>
+          <ion-input type="text"
+                     formControlName="passportPlaceOfBirth"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.passportPlaceOfBirth.valid && (DetailsOneForm.controls.passportPlaceOfBirth.dirty || submitAttempt)">
+          Please enter your Place of Birth
+        </div>
+
+
+
+
+        <div class="rak-select-holder margin-top-3">
+        <div class="rak-select-label">
+          Passport issue Date
+        </div>
+
+        <div class="rak-select-items ">
+          <div class="rak-select-item-25">
+            <div class="select-style">
+              <select name="" id="passportIssueday"
+                      formControlName="passportIssueDay"
+                      [(ngModel)]="selectedPassportIssueDay"
+              >
+                <option *ngFor="let item of passportIssueDays" [ngValue]="item">{{item}}</option>
+
+
+              </select>
+            </div>
+
+          </div>
+          <div class="rak-select-item-25">
+            <div class="select-style">
+              <select name="" id="passportIssueMonth"
+                      formControlName="passportIssueMonth"
+                      [(ngModel)]="selectedPassportIssueMonth"
+              >
+                <option *ngFor="let item of passportIssueMonths" [ngValue]="item">{{item}}</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="rak-select-item-50">
+            <div class="select-style">
+              <select name="" id="passportIssueYear"
+                      formControlName="passportIssueYear"
+                      [(ngModel)]="selectedPassportIssueYear"
+              >
+                <option *ngFor="let item of passportIssueYears" [ngValue]="item">{{item }}</option>
+
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+        <div class="rak-select-holder margin-top-3">
+          <div class="rak-select-label">
+            Passport Expiry Date
+          </div>
+
+          <div class="rak-select-items ">
+            <div class="rak-select-item-25">
+              <div class="select-style">
+                <select name="" id="passportExpireDay"
+                        formControlName="passportExpireDay"
+                        [(ngModel)]="selectedPassportExpireDay"
+                >
+                  <option *ngFor="let item of passportExpireDays" [ngValue]="item">{{item}}</option>
+
+
+                </select>
+              </div>
+
+            </div>
+            <div class="rak-select-item-25">
+              <div class="select-style">
+                <select name="" id="passportExpireMonth"
+                        formControlName="passportExpireMonth"
+                        [(ngModel)]="selectedPassportExpireMonth"
+                >
+                  <option *ngFor="let item of passportExpireMonths" [ngValue]="item">{{item}}</option>
+
+                </select>
+              </div>
+            </div>
+            <div class="rak-select-item-50">
+              <div class="select-style">
+                <select name="" id="passportExpireYear"
+                        formControlName="passportExpireYear"
+                        [(ngModel)]="selectedPassportExpireYear"
+                >
+                  <option *ngFor="let item of passportExpireYears" [ngValue]="item">{{item }}</option>
+
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="rak-uploading-file -status-done show-uploader margin-top-3" *ngIf="step1">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file"></i>
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Upload your Passport Image</h1>
+            <h2>(JPG, PNG or PDF format, max size 5MB)</h2>
+          </div>
+        </div>
+
+
+        <div class="rak-uploading-file -status-success show-uploader  margin-top-3" *ngIf="step2">
+          <div class="rak-uploading-file-icon">
+
+            <i class="rakiconrak-upload-file-success">
+              <span class="path1"></span><span class="path2"></span><span class="path3"></span>
+            </i>
+
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Uploading Your Passport Image </h1>
+            <h2>35% of 1.5MB Upload</h2>
+            <div class="rak-uploading-file-preloader">
+              <div class="current-status" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="rak-uploading-file -status-error show-uploader margin-top-3" *ngIf="step3">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file-failer">
+              <span class="path1"></span><span class="path2"></span><span class="path3"></span>
+            </i>
+
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Error</h1>
+            <h2>35% of 1.5MB Upload</h2>
+            <div class="rak-uploading-file-preloader">
+              <div class="current-status" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="rak-uploading-file -status-success show-uploader margin-top-3" *ngIf="step4">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file-success">
+              <span class="path1"></span><span class="path2"></span><span class="path3"></span>
+            </i>
+
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Uploading Complete</h1>
+            <h2>100% of 1.5MB Uploaded</h2>
+            <div class="rak-uploading-file-preloader">
+              <div class="current-status" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      </div>
+      <div class="button-holder-center no-padding">
+        <button ion-button round class="rak-button-active rak-button-full"
+                (click)="gotoNext()"
+                color="primary">Next
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <!--Awesome Block-->
+  <div class="page-body-start no-padding height-100  " [ngClass]="{'show-body': showContent3}">
+    <div class="awesome-holder awesome-holder-passport" (click)="goToPage('photo')">
+      <h1>Awesome!</h1>
+      <h2><i class="rakiconrak-check"></i></h2>
+      <h4>Passport Successfuly Captured </h4>
+    </div>
+
+  </div>
+
+</ion-content>

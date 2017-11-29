@@ -1,0 +1,131 @@
+<ion-content>
+
+  <div class="rak-header-holder" padding>
+
+    <h3 class="rak-header-navigation">
+      <span (click)="goBack()"><i class="rakiconrak-back-arrow"></i></span>
+      Photo
+    </h3>
+
+
+    <ul class="rak-breadcrumbs">
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>01</span>
+            <b>Details</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>02</span>
+            <b>Emirates ID</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>03</span>
+            <b>Passport</b>
+          </a>
+        </div>
+      </li>
+      <li class=" rak-breadcrumbs-live">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>04</span>
+            <b>Photo</b>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>05</span>
+            <b>Account</b>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!--Cam -->
+
+  <div class="page-body-start no-padding height-100 show-body " *ngIf="showContent1">
+    <div class="dummy-images-holder">
+
+      <!--Camera 01-->
+      <div class="dummy-images-top " (click)="gotoPhoto('showImage2')" [ngClass]="{'show-image': showImage1}">
+        <div class="cam-info-message">
+          The picture is blurry. try stabilising your camera
+        </div>
+        <div class="image-frame camera-1">
+        </div>
+      </div>
+
+      <!--Camera 02-->
+      <div class="dummy-images-top " (click)="showScanningFail()" [ngClass]="{'show-image': showImage2}">
+        <div class="cam-info-message">
+          Position your face as indicated
+        </div>
+        <div class="image-frame camera-2">
+        </div>
+      </div>
+
+      <div class="dummy-images-button">
+        <div class="rak-heading-3">Now let's take a selfie, it will help us verify your identity</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="page-body-start no-padding height-100 show-body " *ngIf="showContent2">
+    <div class="dummy-images-holder">
+
+      <!--Camera 01-->
+
+
+      <!--Camera 02-->
+      <div class="user-images-top">
+
+        <h3>This is your Picture</h3>
+
+        <img src="assets/imgs/camera-3.png" alt="">
+
+      </div>
+
+      <div class="user-images-actions">
+
+        <div class="rak-link-big-icon">
+          <a href="" (click)="takeNewPhoto()">
+            <i class="rakiconrak-cam"></i>
+          </a>
+          Take another one
+        </div>
+
+        <div class="user-image-action-or">
+          or
+          <br /> &nbsp;
+          <br /> &nbsp;
+          <br /> &nbsp;
+        </div>
+
+        <div class="rak-link-big-icon save-it ">
+          <a href="" (click)="goToPage($event,'account')">
+            <i class="rakiconsave-it">
+              <span class="path1"></span><span class="path2"></span><span class="path3"></span><span
+              class="path4"></span>
+            </i>
+          </a>
+          Save it <br /> &nbsp;
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</ion-content>

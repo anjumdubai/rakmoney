@@ -1,0 +1,26 @@
+.app-root.app-root-md,
+.app-root.app-root-ios {
+
+  .rak-button-full {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .rak-button-active {
+    padding: 3.1rem;
+    font-weight: normal;
+    box-shadow: none;
+    font-size: 2rem;
+  }
+
+  .rak-button-outline {
+    @extend .rak-button-active;
+    background: #fff;
+  }
+
+  .button-outline-ios-primary.activated,
+  .button-outline-md-primary.activated{
+    color: #fff;
+    background: color($colors, primary);
+  }
+}

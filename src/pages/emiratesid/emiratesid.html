@@ -1,0 +1,405 @@
+<ion-content>
+
+  <div class="rak-header-holder" padding>
+
+    <h3 class="rak-header-navigation">
+      <span (click)="goBack()"><i class="rakiconrak-back-arrow"></i></span>
+      Emirates ID
+    </h3>
+
+    <ul class="rak-breadcrumbs">
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>01</span>
+            <b>Details</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-live">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>02</span>
+            <b>Emirates ID</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>03</span>
+            <b>Passport</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>04</span>
+            <b>Photo</b>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>05</span>
+            <b>Account</b>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <!--emirates ID -->
+
+  <div class="page-body-start no-padding height-100  " [ngClass]="{'show-body': showContent1}">
+    <div class="dummy-images-holder">
+
+      <!--Picture 01-->
+      <!--<div class="dummy-images-top" (click)="gotoPhoto('showImage2')" [ngClass]="{'show-image': showImage1}">-->
+      <div class="dummy-images-top show-image" *ngIf="showImageBlock1" >
+
+        <div class="flip-container " [ngClass]="{'flip': showImage2}">
+          <div class="flipper">
+            <div class="front" (click)="gotoPhoto('showImage2')">
+              <div class="image-frame emirates-id-1">
+              </div>
+            </div>
+            <div class="back" (click)="gotoPhoto('showImage3')">
+              <div class="cam-error-message">
+                The picture is blurry. try stabilising your camera
+              </div>
+              <div class="image-frame emirates-id-1a">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Picture 01 a-->
+      <!--<div class="dummy-images-top " (click)="gotoPhoto('showImage3')" [ngClass]="{'show-image': showImage2}">-->
+      <!--<div class="cam-error-message">-->
+      <!--The picture is blurry. try stabilising your camera-->
+      <!--</div>-->
+      <!--<div class="image-frame emirates-id-1a">-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <!--Picture 02-->
+      <div class="dummy-images-top show-image"  *ngIf="showImageBlock2">
+        <div class="flip-container " [ngClass]="{'flip': showImage4}">
+          <div class="flipper">
+            <div class="front" (click)="gotoPhoto('showImage4')">
+              <div class="cam-error-message">
+                The picture is blurry. try stabilising your camera
+              </div>
+              <div class="image-frame emirates-id-1a">
+              </div>
+            </div>
+            <div class="back" (click)="gotoPhoto('showImage5')">
+              <div class="image-frame emirates-id-2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--<div class="dummy-images-top " (click)="gotoPhoto('showImage4')" [ngClass]="{'show-image': showImage3}">-->
+      <!--<div class="image-frame emirates-id-2">-->
+      <!--</div>-->
+      <!--</div>-->
+
+
+      <!--Picture 03-->
+      <!--<div class="dummy-images-top " (click)="gotoPhoto('showImage5')" [ngClass]="{'show-image': showImage4}">-->
+      <!--<div class="image-frame emirates-id-3">-->
+      <!--</div>-->
+      <!--</div>-->
+
+
+
+      <div class="dummy-images-top show-image"  *ngIf="showImageBlock3">
+        <div class="flip-container " [ngClass]="{'flip': showImage6}">
+          <div class="flipper">
+            <div class="front" (click)="gotoPhoto('showImage6')">
+              <div class="image-frame emirates-id-2">
+              </div>
+            </div>
+            <div class="back" (click)="gotoPhoto('showImage7')">
+              <div class="image-frame emirates-id-3">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="dummy-images-top show-image" *ngIf="showImageBlock4" >
+        <div class="flip-container " [ngClass]="{'flip': showImage8}">
+          <div class="flipper">
+            <div class="front" (click)="gotoPhoto('showImage8')">
+              <div class="image-frame emirates-id-3">
+              </div>
+            </div>
+            <div class="back" (click)="showScanningFail()">
+              <div class="image-frame emirates-id-4">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!--<div class="dummy-images-top show-image"  >-->
+        <!--<div class="flip-container " [ngClass]="{'flip': showImage6}">-->
+          <!--<div class="flipper">-->
+            <!--<div class="front" (click)="gotoPhoto('showImage6')">-->
+              <!--<div class="image-frame emirates-id-2">-->
+              <!--</div>-->
+            <!--<div class="back" (click)="gotoPhoto('showImage7')">-->
+              <!--<div class="image-frame emirates-id-2">-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--</div>-->
+
+      <!--Picture 04-->
+      <!--<div class="dummy-images-top " (click)="showScanningFail()" [ngClass]="{'show-image': showImage5}">-->
+        <!--<div class="image-frame emirates-id-4">-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <div class="dummy-images-button">
+        <div class="rak-heading-3" *ngIf="!frontCompleted">Position your Emirates ID (Front) in the frame</div>
+        <div class="rak-heading-3" *ngIf="frontCompleted">Position your Emirates ID (Back) in the frame</div>
+        <ul class="rak-navigation"
+            [ngClass]="{'rak-navigation-completed-active' : fontCompletedAndActive}">
+          <li class="" [ngClass]="{'rak-navigation-completed': frontCompleted}">
+            <div>
+              <a href="" (click)="doNothing($event)" *ngIf="!frontCompleted">
+                <span>Front</span>
+              </a>
+
+              <a href="" (click)="doNothing($event)" *ngIf="frontCompleted">
+                <span> </span>
+              </a>
+
+
+            </div>
+          </li>
+          <li class=" ">
+            <div>
+              <a href="" (click)="doNothing($event)">
+                <span>Back</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Scanning failed-->
+  <div class="page-body-start " [ngClass]="{'show-body': showContent2}">
+
+    <h1 class="rak-heading-2">Scanning failed </h1>
+    <h1 class="rak-heading-2">Please fill in the information from your Emirates ID </h1>
+
+    <p *ngIf="submitAttempt" class="submitAttempt">Please fill out all details accurately.</p>
+    <form [formGroup]="DetailsOneForm">
+
+      <div class="rak-from-element-holder">
+        <h2>Front</h2>
+
+        <ion-item class="rak-input"
+                  [class.rak-input-error]="!DetailsOneForm.controls.idNumber.valid && (DetailsOneForm.controls.idNumber.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.idNumber.valid && (DetailsOneForm.controls.idNumber.dirty || submitAttempt)"
+        >
+          <ion-label floating>ID Number</ion-label>
+          <ion-input type="tel"
+                     [(ngModel)]="DetailsOneForm.idNumber"
+                     (ngModelChange)="onEmirateIdBlur($event)"
+                     formControlName="idNumber"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.idNumber.valid && (DetailsOneForm.controls.idNumber.dirty || submitAttempt)">
+          Please enter your ID Number
+        </div>
+
+
+        <ion-item class="rak-input "
+                  [class.rak-input-error]="!DetailsOneForm.controls.idName.valid && (DetailsOneForm.controls.idName.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.idName.valid && (DetailsOneForm.controls.idName.dirty || submitAttempt)"
+        >
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text"
+                     formControlName="idName"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.idName.valid && (DetailsOneForm.controls.idName.dirty || submitAttempt)">
+          Please enter your Name
+        </div>
+
+
+        <ion-item class="rak-input "
+
+                  [class.rak-input-error]="!DetailsOneForm.controls.idNationality.valid && (DetailsOneForm.controls.idNationality.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.idNationality.valid && (DetailsOneForm.controls.idNationality.dirty || submitAttempt)"
+        >
+          <ion-label floating>Nationality</ion-label>
+          <ion-input type="text"
+                     formControlName="idNationality"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.idNationality.valid && (DetailsOneForm.controls.idNationality.dirty || submitAttempt)">
+          Please enter your Nationality
+        </div>
+
+
+        <div class="rak-uploading-file -status-done margin-top-3-2" [ngClass]="{'show-uploader': step1}">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file"></i>
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Upload your Emirates ID (Front)</h1>
+            <h2>(JPG, PNG or PDF format, max size 5MB)</h2>
+          </div>
+        </div>
+
+
+        <div class="rak-uploading-file -status-success margin-top-3-2" [ngClass]="{'show-uploader': step2}">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file-success">
+              <span class="path1"></span><span class="path2"></span><span class="path3"></span>
+            </i>
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Uploading your Emirates ID</h1>
+            <h2>35% of 1.5MB Uploaded</h2>
+            <div class="rak-uploading-file-preloader">
+              <div class="current-status" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="rak-uploading-file -status-error margin-top-3-2" [ngClass]="{'show-uploader': step3}">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file-failer">
+              <span class="path1"></span><span class="path2"></span><span class="path3"></span>
+            </i>
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Uploading Error</h1>
+            <h2>35% of 1.5MB Uploaded</h2>
+            <div class="rak-uploading-file-preloader">
+              <div class="current-status" style="width: 40%"></div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="rak-uploading-file -status-success margin-top-3-2" [ngClass]="{'show-uploader': step4}">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file-success">
+              <span class="path1"></span><span class="path2"></span><span class="path3"></span>
+            </i>
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Uploading Complete</h1>
+            <h2>100% of 1.5MB Uploaded</h2>
+            <div class="rak-uploading-file-preloader">
+              <div class="current-status" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="rak-from-element-holder">
+        <h2>Back</h2>
+
+        <ion-item class="rak-input "
+                  [class.rak-input-error]="!DetailsOneForm.controls.idCardNumber.valid && (DetailsOneForm.controls.idCardNumber.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.idCardNumber.valid && (DetailsOneForm.controls.idCardNumber.dirty || submitAttempt)"
+        >
+          <ion-label floating>Card Number</ion-label>
+          <ion-input type="tel"
+                     formControlName="idCardNumber"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.idCardNumber.valid && (DetailsOneForm.controls.idCardNumber.dirty || submitAttempt)">
+          Please enter your Card Number
+        </div>
+
+
+        <ion-item class="rak-input "
+                  [class.rak-input-error]="!DetailsOneForm.controls.idCardExpiry.valid && (DetailsOneForm.controls.idCardExpiry.dirty || submitAttempt)"
+                  [class.rak-input-valid]="DetailsOneForm.controls.idCardExpiry.valid && (DetailsOneForm.controls.idCardExpiry.dirty || submitAttempt)"
+        >
+          <ion-label floating>Card Expiry <i class="show-when-focuse">(DD-MM-YYYY)</i></ion-label>
+          <ion-input type="tel"
+                     [(ngModel)]="DetailsOneForm.idCardExpiry"
+                     (ngModelChange)="onExpiryEvent($event)"
+                     formControlName="idCardExpiry"
+                     value=""></ion-input>
+        </ion-item>
+        <div class="rak-input-message-error"
+             [class.showMessage]="!DetailsOneForm.controls.idCardExpiry.valid && (DetailsOneForm.controls.idCardExpiry.dirty || submitAttempt)">
+          Please enter your Card Expiry Date
+        </div>
+
+        <div class="rak-uploading-file -status-done margin-top-3-2" [ngClass]="{'show-uploader': step0}">
+          <div class="rak-uploading-file-icon">
+            <i class="rakiconrak-upload-file"></i>
+          </div>
+          <div class="rak-uploading-file-content">
+            <h1>Upload your Emirates ID (Back)</h1>
+            <h2>(JPG, PNG or PDF format, max size 5MB)</h2>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="button-holder-center">
+        <button ion-button round class="rak-button-active rak-button-full"
+
+                (click)="gotoNext('step1')"
+                color="primary">Next
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <!--Scanning failed 3-->
+  <div class="page-body-start no-padding height-100 " [ngClass]="{'show-body': showContent3}">
+
+    <div class="awesome-holder" (click)="goToPage('emirateid')">
+
+      <h1>Awesome!</h1>
+      <h2><i class="rakiconrak-check"></i></h2>
+      <h4>Emirates ID Successfuly Captured</h4>
+
+    </div>
+
+  </div>
+
+</ion-content>

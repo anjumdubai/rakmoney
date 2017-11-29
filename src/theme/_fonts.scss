@@ -1,0 +1,50 @@
+
+//@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+@font-face {
+  font-family: 'SFUIBlack';
+  src: url('#{$font-path}/SF-UI-Display-Black.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFUIBold';
+  src: url('#{$font-path}/SF-UI-Display-Bold.otf');
+}
+
+@font-face {
+  font-family: 'SFUIHeavy';
+  src: url('#{$font-path}/SF-UI-Display-Heavy.otf');
+}
+
+@font-face {
+  font-family: 'SFUILight';
+  src: url('#{$font-path}/SF-UI-Display-Light.otf');
+}
+
+@font-face {
+  font-family: 'SFUIMedium';
+  src: url('#{$font-path}/SF-UI-Display-Medium.otf');
+}
+
+@font-face {
+  font-family: 'SFUIRegular';
+  src: url('#{$font-path}/SF-UI-Display-Regular.otf');
+}
+
+@font-face {
+  font-family: 'SFUISemibold';
+  src: url('#{$font-path}/SF-UI-Display-Semibold.otf');
+}
+
+@font-face {
+  font-family: 'SFUIThin';
+  src: url('#{$font-path}/SF-UI-Display-Thin.otf');
+}
+
+@font-face {
+  font-family: 'SFUIUltralight';
+  src: url('#{$font-path}/SF-UI-Display-Ultralight.otf');
+}
+
+

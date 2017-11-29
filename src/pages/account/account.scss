@@ -1,0 +1,119 @@
+page-account {
+
+  .password-count {
+    float: right;
+    position: relative;
+    bottom: 24px;
+    right: 10px;
+  }
+
+  .strength-meter {
+    position: relative;
+    height: 6px;
+    background: #DDD;
+    margin: 10px 30px 10px 0;
+    width: 137px;
+    flex: 1 0;
+  }
+
+  .strength-meter:before, .strength-meter:after {
+    content: '';
+    height: inherit;
+    background: transparent;
+    display: block;
+    border-color: #FFF;
+    border-style: solid;
+    border-width: 0 5px 0 5px;
+    position: absolute;
+    width: 30%;
+    z-index: 10;
+  }
+
+  .strength-meter:before,
+  .strength-meter:after {
+    left: 33%;
+  }
+
+  .strength-meter-fill {
+    background: transparent;
+    height: inherit;
+    position: absolute;
+    width: 0;
+    border-radius: inherit;
+    transition: width 0.5s ease-in-out, background 0.25s;
+  }
+
+  .strength-meter-fill.strength-0 {
+    background: darkred;
+    width: 20%;
+  }
+
+  .strength-meter-fill.strength-1 {
+    background: orangered;
+    width: 40%;
+  }
+
+  .strength-meter-fill.strength-2 {
+    background: orange;
+    width: 60%;
+  }
+
+  .strength-meter-fill.strength-3 {
+    background: yellowgreen;
+    width: 80%;
+  }
+
+  .strength-meter-fill.strength-4 {
+    background: green;
+    width: 100%;
+  }
+
+  .finger-print {
+
+    &.fingerPrintActive{
+      ion-item.item-ios.item-block .item-inner ion-icon ,
+      ion-item.item-md.item-block .item-inner ion-icon {
+        color: color($colors, primary);
+        @include transitions(all .5s ease-in);
+      }
+    }
+
+    margin-top: 2rem;
+    ion-item {
+      background-color: transparent;
+      padding: 0;
+      &.item-ios.item-block .item-inner,
+      &.item-md.item-block .item-inner {
+        border-bottom: none;
+        ion-icon {
+          @include transitions(all .5s ease-in);
+          background: color($colors, brand_grey_4);
+          font-size: 3.5rem;
+          border-radius: 50%;
+          padding: 0.3rem .6rem;
+          width: 40px;
+          height: 40px;
+          float: left;
+          margin-right: 1rem;
+        }
+      }
+      ion-label {
+        text-overflow: initial;
+        white-space: normal;
+        font-weight: 400;
+        font-size: 1.4rem;
+        color: color($colors, brand_grey_1);
+      }
+    }
+  }
+
+
+
+  .account-complete{
+    h3{
+      color: color($colors, brand_grey_1);
+    }
+  }
+
+
+}

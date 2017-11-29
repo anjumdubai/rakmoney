@@ -1,0 +1,237 @@
+page-emiratesid {
+
+}
+
+.user-number-edit {
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      font-size: 1.6rem;
+      padding-bottom: 2rem;
+      margin-top: 2rem;
+
+      &:first-child {
+        border-bottom: 1px solid color($colors, brand_grey_4);
+      }
+      .first-block,
+      .second-block {
+        display: flex;
+        align-items: center;
+      }
+
+      .first-block {
+        font-size: 1.8rem;
+        color: color($colors, brand_black);
+
+        .first-block-icon-holder {
+          display: flex;
+          align-items: center;
+          padding-right: 1rem;
+          .icon {
+            font-size: 3rem;
+            color: color($colors, brand_grey_1);
+          }
+        }
+
+      }
+      a {
+        padding-left: .6rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &.account-page{
+    margin: 2rem 0;
+    ul{
+      li{
+        padding-bottom: 1rem;
+        margin-top: 1rem;
+        &:first-child{
+          border: none;
+        }
+        a {
+          color: color($colors, brand_grey_1);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+.dummy-images-holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-direction: column;
+  align-content: stretch;
+  height: calc(100vh - 127px);
+  .dummy-images-top {
+    display: none;
+    width: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    &.show-image{
+      display: flex;
+    }
+    .cam-error-message {
+      position: absolute;
+      width: 100%;
+      padding: 1rem;
+      color: #fff;
+      text-align: center;
+      font-size: 1.5rem;
+      background: color($colors, brand_orange);
+    }
+    .cam-info-message {
+      position: absolute;
+      width: 100%;
+      padding: 1rem;
+      color: #fff;
+      text-align: center;
+      font-size: 1.5rem;
+      background: color($colors, brand_black);
+    }
+  }
+  .image-frame {
+    min-height: 100%;
+    width: 100%;
+    &.emirates-id-1 {
+      background: url("#{$image-path}emirates-id-1.png") no-repeat 0 0;
+      background-size: contain;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+    }
+    &.emirates-id-1a {
+      background: url("#{$image-path}emirates-id-1-a.png") no-repeat 0 0;
+      background-size: contain;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+    }
+    &.emirates-id-2 {
+      background: url("#{$image-path}emirates-id-2.png") no-repeat 0 0;
+      background-size: contain;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+    }
+    &.emirates-id-3 {
+      background: url("#{$image-path}emirates-id-3.png") no-repeat 0 0;
+      background-size: contain;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+    }
+    &.emirates-id-4 {
+      background: url("#{$image-path}emirates-id-4.png") no-repeat 0 0;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+      background-size: contain;
+
+    }
+
+    &.passport-1 {
+      background: url("#{$image-path}passport-1.png") no-repeat 0 0;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+      background-size: cover;
+
+    }
+
+    &.passport-2 {
+      background: url("#{$image-path}passport-2.png") no-repeat 0 0;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+      background-size: cover;
+    }
+
+
+    &.camera-1 {
+      background: url("#{$image-path}camera-1.png") no-repeat 0 0;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+      background-size: contain;
+    }
+
+    &.camera-2 {
+      background: url("#{$image-path}camera-2.png") no-repeat 0 0;
+      @include bp-xxs-min{
+        background-size: cover;
+      }
+      background-size: contain;
+    }
+
+
+    //photo-1
+
+  }
+  .dummy-images-button {
+    flex-shrink: 1;
+    flex-grow: 0;
+  }
+  .rak-heading-3 {
+    text-align: center;
+    padding: 3rem 0 2rem;
+  }
+  .rak-navigation {
+    margin-bottom: 4rem;
+  }
+}
+
+.rak-from-element-holder {
+  margin: 2rem 0 2rem;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1.5rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+}
+
+.awesome-holder {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+
+  h1 {
+    color: color($colors, brand_green);
+    margin: 5rem 0;
+    font-size: 3rem;
+  }
+
+  h2 {
+    i {
+      font-size: 8rem;
+      &:before {
+        color: color($colors, brand_green);
+      }
+    }
+  }
+
+  h4{
+    font-size: 2.5rem;
+    color: color($colors, brand_green);
+    text-align: center;
+    font-weight: normal;
+    padding: 2rem;
+
+  }
+}

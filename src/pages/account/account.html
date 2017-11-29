@@ -1,0 +1,223 @@
+<ion-content>
+
+  <div class="rak-header-holder" padding>
+
+    <h3 class="rak-header-navigation">
+      <span (click)="goBack()"><i class="rakiconrak-back-arrow"></i></span>
+      Account
+    </h3>
+
+    <ul class="rak-breadcrumbs">
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>01</span>
+            <b>Details</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>02</span>
+            <b>Emirates ID</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>03</span>
+            <b>Passport</b>
+          </a>
+        </div>
+      </li>
+      <li class=" rak-breadcrumbs-active">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>04</span>
+            <b>Photo</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-live">
+        <div>
+          <a href="" (click)="doNothing($event)">
+            <span>05</span>
+            <b>Account</b>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="page-body-start  show-body" *ngIf="showContent1">
+
+    <h1 class="rak-heading-2">Great! Now let's create your password</h1>
+    <p *ngIf="submitAttempt" class="submitAttempt">Please fill out all details accurately.</p>
+
+    <form [formGroup]="DetailsOneForm">
+      <div class="rak-input-password-holder">
+        <ion-item class="rak-input ">
+          <ion-label floating>Password Validation</ion-label>
+
+          <ion-input
+            type="{{showPassValidation?'text':'password'}}"
+            name="password"
+            formControlName="password1"
+            [(ngModel)]="user.password1"
+            (ngModelChange)="onMobileNumberBlur($event)"
+            value=""></ion-input>
+
+        </ion-item>
+
+        <div class="rak-input-password-toggle" (click)="showPassValidation = !showPassValidation">
+          <i [ngClass]="showPassValidation ? 'rakiconrak-eye-open' :'rakiconrak-eye-close'"></i>
+        </div>
+
+        <div class="rak-input-password-indicator">
+
+          <div class="strength-meter">
+            <div class="strength-meter-fill"
+                 [ngClass]="{'strength-0': meter === 0 , 'strength-1': meter === 1 , 'strength-2': meter === 2, 'strength-3': meter === 3, 'strength-4': meter ===4}">
+
+            </div>
+          </div>
+
+          <!--</div>-->
+          <div>
+            <div class="rak-input-message showMessage">8 characters minimum</div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="rak-input-password-holder">
+        <ion-item class="rak-input ">
+          <ion-label floating>Confirm Password</ion-label>
+          <ion-input
+            type="{{showPassConfirm?'text':'password'}}"
+            name="number"
+            formControlName="password2"
+            [(ngModel)]="user.password2"
+            (ngModelChange)="passwordCheck($event)"
+            value=""></ion-input>
+
+        </ion-item>
+
+        <div class="rak-input-password-toggle" (click)="showPassConfirm = !showPassConfirm">
+          <i [ngClass]="showPassConfirm ? 'rakiconrak-eye-open' :'rakiconrak-eye-close'"></i>
+        </div>
+
+        <div class="rak-input-password-indicator">
+          <div></div>
+          <div>
+            <div class="rak-input-message-error" [ngClass]="{'showMessage' : showMessage}">Password doesn't match</div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+
+
+    <div class="finger-print" [ngClass]="{'fingerPrintActive': user.fingerPrint}">
+
+      <ion-item>
+        <ion-label>
+          <ion-icon name="finger-print"></ion-icon>
+          Enable Login with my Fingerprint
+        </ion-label>
+        <ion-toggle color="brand_green" [(ngModel)]="user.fingerPrint" checked="true"></ion-toggle>
+      </ion-item>
+
+    </div>
+
+
+    <div class="button-holder-center">
+      <button ion-button round class="rak-button-active rak-button-full"
+
+              (click)="createAccount()"
+              color="primary">Create Account</button>
+    </div>
+
+
+  </div>
+
+
+  <div class="page-body-start show-body  account-complete" *ngIf="showContent2">
+
+    <h2 class="rak-heading-2">ID Verification in process</h2>
+    <h3 class="rak-heading-3">
+      You can start sending money right now up to AED 2,000
+    </h3>
+
+    <h3 class="rak-heading-4">
+      If you need to send a larger amount, don't worry - our security team will process your application within <a
+      href="" (click)="doNothing($event)">24 hours.</a>
+    </h3>
+
+    <h3 class="rak-heading-4">
+      How should we contact you?
+    </h3>
+
+
+    <div class="user-number-edit account-page">
+      <ul>
+        <li>
+
+          <div class="first-block">
+            <div class="rak__checkbox">
+              <input type="checkbox" id="Phone" name="Phone" checked>
+              <label for="Phone">Phone : {{userData.countryCode.code}} {{userData.phoneNumber}}</label>
+            </div>
+          </div>
+          <div class="second-block">
+            <ion-icon name="create" color="brand_grey_1"></ion-icon>
+            <a href=""(click)="doNothing($event)"> Edit</a>
+          </div>
+        </li>
+        <li>
+
+          <div class="first-block">
+            <div class="rak__checkbox">
+              <input type="checkbox" id="Whats" name="Whats"  >
+              <label for="Whats">Whats app :  {{userData.countryCode.code}} {{userData.phoneNumber}}</label>
+            </div>
+          </div>
+          <div class="second-block">
+            <ion-icon name="create" color="brand_grey_1"></ion-icon>
+            <a href=""(click)="doNothing($event)"> Edit</a>
+          </div>
+        </li>
+
+        <li>
+
+          <div class="first-block">
+            <div class="rak__checkbox">
+              <input type="checkbox" id="Email" name="Email" checked>
+              <label for="Email">Email :   {{userData.emailAddress}}</label>
+            </div>
+          </div>
+          <div class="second-block">
+            <ion-icon name="create" color="brand_grey_1"></ion-icon>
+            <a href=""(click)="doNothing($event)"> Edit</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="button-holder-center">
+      <button ion-button round class="rak-button-active rak-button-full"
+
+              (click)="openModal()" color="primary">Complete Registration
+      </button>
+    </div>
+
+  </div>
+
+
+</ion-content>

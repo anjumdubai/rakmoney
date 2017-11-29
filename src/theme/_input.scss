@@ -1,0 +1,193 @@
+
+.app-root.app-root-md,
+.app-root.app-root-ios {
+
+  .item-input .label-md,
+  .item-select .label-md,
+  .item-datetime .label-md,
+  .item-input .label-ios,
+  .item-select .label-ios,
+  .item-datetime .label-ios {
+    color: color($colors, brand_grey_1);
+    font-family: 'SFUIRegular';
+  }
+
+  .rak-input {
+    padding: 0;
+    margin-bottom: 10px;
+    background: transparent;
+
+
+
+    &.item-block:first-child {
+      border-top: none;
+    }
+
+    &.rak-input-inline {
+      margin-bottom: 0;
+      min-height: 3.5rem;
+      input.text-input {
+        margin: 0 8px;
+        font-family: 'SFUIMedium';
+      }
+    }
+
+    &.item-input-has-focus,
+    &.input-has-focus,
+    &.item-input-has-focus .item-inner,
+    &.input-has-focus .item-inner,
+    &.item-input-has-focus:last-child,
+    &.input-has-focus:last-child {
+      border-bottom-color: color($colors, brand_grey_1);
+      box-shadow: none !important;
+
+    }
+
+
+    &.item-input-has-value.item-input .label-md,
+    &.item-input-has-focus.item-input .label-md,
+    &.input-has-focus.item-select .label-md,
+    &.input-has-focus.item-datetime .label-md,
+    &.input-has-focus.item-input .label-ios,
+    &.item-input-has-value.item-input .label-ios,
+    &.input-has-focus.item-select .label-ios,
+    &.input-has-focus.item-datetime .label-ios {
+      color: color($colors, primary);
+      font-family: 'SFUIRegular';
+    }
+
+
+    &.item-input-has-value.item-input .label-ios .show-when-focuse,
+    &.item-input-has-focus.item-input .label-ios .show-when-focuse,
+    &.item-input-has-value.item-input .label-md .show-when-focuse,
+    &.item-input-has-focus.item-input .label-md .show-when-focuse{
+        display: inline-block;
+    }
+    &.rak-input-valid {
+      .item-inner {
+        border-bottom-color: color($colors, brand_green);
+        box-shadow: none !important;
+      }
+
+      ion-input {
+        position: relative;
+        font-family: 'SFUIMedium';
+        &:after {
+          font-family: "Ionicons";
+          content: "\f14a";
+          position: absolute;
+          top: 10px;
+          right: 0;
+          display: inline-block;
+          color: color($colors, brand_green);
+        }
+      }
+
+      &.rak-input-inline ion-input {
+        &:after {
+          top: 2px;
+        }
+      }
+    }
+
+    &.rak-input-error {
+
+      &:last-child,
+      .item-inner {
+        border-bottom-color: color($colors, brand_pal);
+        box-shadow: none !important;
+      }
+
+      ion-input {
+        position: relative;
+        &:after {
+          font-family: "Ionicons";
+          content: "\f276";
+          position: absolute;
+          top: 10px;
+          right: 0;
+          display: inline-block;
+          color: color($colors, brand_pal);
+
+        }
+      }
+
+      &.rak-input-inline ion-input {
+        &:after {
+          top: 2px;
+        }
+      }
+
+    }
+
+  }
+
+  .rak-input-message-error {
+    text-align: right;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    color: color($colors, brand_pal);
+    display: none;
+    &.showMessage {
+      display: block;
+    }
+  }
+
+  .rak-input-message {
+    text-align: right;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    color: color($colors, brand_grey_1);
+    display: none;
+    &.showMessage {
+      display: block;
+    }
+  }
+
+  .rak-input-password-holder {
+    position: relative;
+    .rak-input-password-toggle {
+      position: absolute;
+      top: 25px;
+      right: 0;
+      z-index: 10;
+      cursor: pointer;
+      padding: 10px;
+      font-size: 2rem;
+    }
+  }
+
+  .rak-input-password-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+  }
+
+  .rak-password-strength {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    li {
+      list-style: none;
+      padding: .5rem;
+      background: red;
+      margin-top: .5rem;
+      margin-right: .5rem;
+      flex: 1;
+      &.-state-yellow {
+        background: color($colors, brand_yellow);
+      }
+      &.-state-red {
+        background: color($colors, primary);
+      }
+      &.-state-green {
+        background: color($colors, brand_green);
+      }
+
+    }
+  }
+}

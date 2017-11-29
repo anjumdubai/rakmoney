@@ -1,0 +1,474 @@
+<ion-content padding>
+
+
+  <ion-list>
+
+    <ion-item class="rak-input ">
+      <ion-label floating>Normal</ion-label>
+      <ion-input type="text" value="I am normal"></ion-input>
+    </ion-item>
+
+
+    <ion-item class="rak-input input-has-focus">
+      <ion-label floating>Focused</ion-label>
+      <ion-input type="text" value="I am in focus"></ion-input>
+    </ion-item>
+
+
+    <ion-item class="rak-input rak-input-valid">
+      <ion-label floating>Valid</ion-label>
+      <ion-input type="text" value="I am valid"></ion-input>
+    </ion-item>
+
+
+    <!--<ion-item class="rak-input rak-input-error">-->
+    <!--<ion-label floating>Error</ion-label>-->
+    <!--<ion-input type="text" value="It is not valid"></ion-input>-->
+    <!--</ion-item>-->
+
+
+    <ion-item class="rak-input rak-input-error">
+      <ion-label floating>Error</ion-label>
+      <ion-input type="text" value="It is not valid"></ion-input>
+    </ion-item>
+    <div class="rak-input-message-error">Enter correct email format: user@example.com</div>
+
+
+    <div class="rak-input-password-holder">
+      <ion-item class="rak-input ">
+        <ion-label floating>Password Validation</ion-label>
+        <ion-input type="password" value="It is not valid"></ion-input>
+      </ion-item>
+
+      <div class="rak-input-password-toggle">
+        <ion-icon name="eye-off"></ion-icon>
+      </div>
+
+      <div class="rak-input-password-indicator">
+        <div>
+          <ul class="rak-password-strength">
+            <li class="-state-red -state-green -state-yellow"></li>
+            <li class="-state-red -state-green -state-yellow"></li>
+            <li class="-state-red -state-green -state-yellow"></li>
+            <!--conditionally you can swap classes -->
+          </ul>
+
+        </div>
+        <div>
+          <div class="rak-input-message">8 characters minimum</div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="rak-input-password-holder">
+      <ion-item class="rak-input ">
+        <ion-label floating>Password Validation</ion-label>
+        <ion-input type="password" value="It is not valid"></ion-input>
+      </ion-item>
+
+      <div class="rak-input-password-toggle">
+        <ion-icon name="eye-off"></ion-icon>
+      </div>
+
+      <div class="rak-input-password-indicator">
+
+        <div>
+          <div class="rak-input-message-error">Password doesn’t match</div>
+        </div>
+
+      </div>
+    </div>
+
+  </ion-list>
+
+
+  <h3>Dropdowns</h3>
+
+
+  <div class="rak-select-holder">
+    <div class="rak-select-label">
+      Phone Number
+    </div>
+
+    <div class="rak-select-items">
+      <div class="rak-select-item-25">
+        <div class="select-style">
+          <select name="" id="1">
+            <option value="097">+971</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="rak-select-item-75">
+        <ion-item class="rak-input rak-input-inline ">
+          <ion-input type="text" value="55-365-8947"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="rak-select-holder">
+    <div class="rak-select-label">
+      Date of Birth
+    </div>
+
+    <div class="rak-select-items">
+      <div class="rak-select-item-25">
+        <div class="select-style">
+          <select name="" id="5">
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+          </select>
+        </div>
+
+      </div>
+      <div class="rak-select-item-25">
+        <div class="select-style">
+          <select name="" id="6">
+            <option value="01">01</option>
+            <option value="01">02</option>
+            <option value="01">03</option>
+            <option value="01">04</option>
+            <option value="01">05</option>
+            <option value="01">06</option>
+            <option value="01">07</option>
+            <option value="01">08</option>
+            <option value="01">09</option>
+            <option value="01">10</option>
+            <option value="01">11</option>
+            <option value="01">12</option>
+          </select>
+        </div>
+      </div>
+      <div class="rak-select-item-50">
+        <div class="select-style">
+          <select name="" id="7">
+            <option value="097">1970</option>
+            <option value="097">1981</option>
+            <option value="097">1982</option>
+            <option value="097">1983</option>
+            <option value="097">1984</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="rak-select-holder">
+    <div class="rak-select-label">
+      Dropdown
+    </div>
+
+    <div class="rak-select-items">
+      <div class="rak-select-item-100">
+        <div class="select-style">
+          <select name="" id="8">
+            <option value="Select an Option">Select an Option</option>
+            <option value="27">Apple</option>
+            <option value="28">Android</option>
+            <option value="28">Windows</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <h3>Uploading a File</h3>
+
+  <div class="rak-uploading-file -status-done">
+    <div class="rak-uploading-file-icon">
+      <ion-icon ios="ios-document" md="md-document"></ion-icon>
+    </div>
+    <div class="rak-uploading-file-content">
+      <h1>Upload your Emirates ID (Front)</h1>
+      <h2>(JPG, PNG or PDF format, max size 5MB)</h2>
+    </div>
+  </div>
+
+
+  <div class="rak-uploading-file -status-success">
+    <div class="rak-uploading-file-icon">
+      <ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon>
+    </div>
+    <div class="rak-uploading-file-content">
+      <h1>Uploading your Emirates ID</h1>
+      <h2>35% of 1.5MB Uploaded</h2>
+      <div class="rak-uploading-file-preloader">
+        <div class="current-status" style="width: 80%"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="rak-uploading-file -status-error">
+    <div class="rak-uploading-file-icon">
+      <ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon>
+    </div>
+    <div class="rak-uploading-file-content">
+      <h1>Uploading Error</h1>
+      <h2>35% of 1.5MB Uploaded</h2>
+      <div class="rak-uploading-file-preloader">
+        <div class="current-status" style="width: 40%"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="rak-uploading-file -status-error">
+    <div class="rak-uploading-file-icon">
+      <ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon>
+    </div>
+    <div class="rak-uploading-file-content">
+      <h1>Oops! <span>Upload faild.</span></h1>
+      <h2>35% of 1.5MB Uploaded</h2>
+      <a href=""> Try again now?</a>
+    </div>
+  </div>
+
+  <div class="rak-uploading-file -status-success">
+    <div class="rak-uploading-file-icon">
+      <ion-icon ios="ios-arrow-dropup-circle" md="md-arrow-dropup-circle"></ion-icon>
+    </div>
+    <div class="rak-uploading-file-content">
+      <h1>Uploading Complete</h1>
+      <h2>100% of 1.5MB Uploaded</h2>
+      <div class="rak-uploading-file-preloader">
+        <div class="current-status" style="width: 100%"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <h3>Toggle</h3>
+  <ion-item>
+    <ion-label> Active</ion-label>
+    <ion-toggle color="brand_green" checked="true"></ion-toggle>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label> Inctive</ion-label>
+    <ion-toggle color="brand_green" checked="false"></ion-toggle>
+  </ion-item>
+
+
+  <h3>Checkboxes</h3>
+
+
+  <div class="rak__checkbox">
+    <input type="checkbox" id="checkbox" checked>
+    <label for="checkbox">Check box : Checked </label>
+  </div>
+
+
+  <div class="rak__checkbox">
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Check box : Unchecked </label>
+  </div>
+
+
+  <h3>Buttons and Hyperlinks</h3>
+
+  <h4>Buttons</h4>
+
+  <button ion-button round color="primary" class="rak-button-outline rak-button-full" outline>Normal</button>
+
+  <br/>
+
+  <button ion-button round class="rak-button-active rak-button-full" color="primary">Active</button>
+
+
+  <h4>Hyperlinks</h4>
+
+  Did not receive code? <a href="">Resend OTP</a>
+
+  <br/>
+
+  <br/>
+  <br/>
+
+  <a href=""> <i class="ion-edit"></i>Edit</a>
+
+  <br/>
+
+  <br/>
+  <br/>
+  <br/>
+
+
+  <div class="rak-link-big-icon rak-margin-right">
+    <a href="">
+      <ion-icon ios="ios-camera" md="md-camera"></ion-icon>
+    </a>
+    Take anotherone
+  </div>
+
+  <div class="rak-link-big-icon">
+    <a href="">
+      <ion-icon ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+    </a>
+    Save it
+  </div>
+  <br/>
+
+  <br/>
+  <br/>
+  <br/>
+
+  <h3>Navigations</h3>
+
+
+  <div class="demo">
+    <h4>Breadcrumb</h4>
+  </div>
+
+
+  <div class="demo">
+    <ul class="rak-breadcrumbs">
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>01</span>
+            <b>Details</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>02</span>
+            <b>Emirates ID</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>03</span>
+            <b>Passport</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>04</span>
+            <b>Photo</b>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="">
+            <span>05</span>
+            <b>Account</b>
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+
+  <div class="demo">
+    <ul class="rak-breadcrumbs">
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="">
+            <span>01</span>
+            <b>Details</b>
+          </a>
+        </div>
+      </li>
+      <li class="rak-breadcrumbs-active">
+        <div>
+          <a href="">
+            <span>02</span>
+            <b>Emirates ID</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>03</span>
+            <b>Passport</b>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>04</span>
+            <b>Photo</b>
+          </a>
+        </div>
+      </li>
+      <li>
+        <div>
+          <a href="">
+            <span>05</span>
+            <b>Account</b>
+          </a>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="demo">
+    <h4>Navigation</h4>
+  </div>
+
+  <div class="demo">
+
+    <ul class="rak-navigation">
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>Front</span>
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>Back</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+
+
+  <i class="rak-rak-cam"></i>ASDDSD
+
+  <div class="demo">
+    <ul class="rak-navigation">
+      <li class="rak-navigation-completed">
+        <div>
+          <a href="">
+            <img src="https://www.id.gov.ae/images/pGrzObYILsr/1b70xf40weeeeee.aspx" alt="">
+          </a>
+        </div>
+      </li>
+      <li class=" ">
+        <div>
+          <a href="">
+            <span>Back</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</ion-content>

@@ -1,0 +1,346 @@
+// input elements
+.app-root.app-root-md,
+.app-root.app-root-ios {
+
+  .item-input .label-md,
+  .item-select .label-md,
+  .item-datetime .label-md,
+  .item-input .label-ios,
+  .item-select .label-ios,
+  .item-datetime .label-ios {
+    color: color($colors, primary);
+  }
+
+  .rak-input {
+    padding: 0;
+    margin-bottom: 10px;
+
+    &.rak-input-inline {
+      margin-bottom: 0;
+      min-height: 3.5rem;
+      input.text-input {
+        margin: 0px 8px;
+      }
+    }
+
+    &.item-input-has-focus,
+    &.input-has-focus,
+    &.item-input-has-focus .item-inner,
+    &.input-has-focus .item-inner,
+    &.item-input-has-focus:last-child,
+    &.input-has-focus:last-child {
+      border-bottom-color: color($colors, brand_black);
+      box-shadow: none;
+    }
+
+    &.rak-input-valid {
+
+      .item-inner {
+        border-bottom-color: color($colors, brand_green);
+        box-shadow: none;
+      }
+
+      ion-input {
+        position: relative;
+        &:after {
+          font-family: "Ionicons";
+          content: "\f14a";
+          position: absolute;
+          top: 10px;
+          right: 0;
+          display: inline-block;
+          color: color($colors, brand_green);
+
+        }
+      }
+
+    }
+
+    &.rak-input-error {
+
+      &:last-child,
+      .item-inner {
+        border-bottom-color: color($colors, brand_pal);
+        box-shadow: none;
+      }
+
+      ion-input {
+        position: relative;
+        &:after {
+          font-family: "Ionicons";
+          content: "\f276";
+          position: absolute;
+          top: 10px;
+          right: 0;
+          display: inline-block;
+          color: color($colors, brand_pal);
+
+        }
+      }
+
+    }
+
+  }
+
+  .rak-input-message-error {
+    text-align: right;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    color: color($colors, brand_pal);
+  }
+
+  .rak-input-message {
+    text-align: right;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    color: color($colors, brand_grey_1);
+  }
+
+  .rak-input-password-holder {
+    position: relative;
+    .rak-input-password-toggle {
+      position: absolute;
+      top: 33px;
+      right: 0;
+      z-index: 10;
+      cursor: pointer;
+      padding: 10px;
+    }
+  }
+
+  .rak-input-password-indicator {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    div {
+      margin-top: .5rem;
+      flex: 1;
+    }
+  }
+
+  .rak-password-strength {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    li {
+      list-style: none;
+      padding: .5rem;
+      background: red;
+      margin-top: .5rem;
+      margin-right: .5rem;
+      flex: 1;
+      &.-state-yellow {
+        background: color($colors, brand_yellow);
+      }
+      &.-state-red {
+        background: color($colors, primary);
+      }
+      &.-state-green {
+        background: color($colors, brand_green);
+      }
+
+    }
+  }
+
+  .rak-select-holder {
+    margin-bottom: 3rem;
+    .rak-select-label {
+      color: color($colors, primary);
+    }
+
+    .rak-select-items {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      div.rak-select-item-25 {
+        max-width: 25%;
+        flex-basis: auto;
+        flex-grow: 1;
+      }
+      div.rak-select-item-50 {
+        max-width: 50%;
+        flex-basis: auto;
+        flex-grow: 1;
+      }
+      div.rak-select-item-75 {
+        max-width: 75%;
+        flex-basis: auto;
+        flex-grow: 1;
+      }
+      div.rak-select-item-100 {
+        max-width: 100%;
+        flex-basis: auto;
+        flex-grow: 1;
+      }
+
+      .select-style {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        margin-bottom: 1px;
+        margin-right: 20px;
+        position: relative;
+        &:after {
+          font-family: "Ionicons";
+          content: "\f3d0";
+          position: absolute;
+          top: 15%;
+          right: 0;
+          font-size: 2rem;
+          display: inline-block;
+          color: color($colors, brand_black);
+
+        }
+
+      }
+      .select-style select {
+        padding: 5px 0;
+        width: 110%;
+        border: none;
+        box-shadow: none;
+        background: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+      }
+
+      .select-style select:focus {
+        outline: none;
+      }
+
+      div:last-child {
+        .select-style {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .rak-uploading-file {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+
+    &.-status-success {
+      .rak-uploading-file-icon {
+        color: color($colors, brand_green);
+      }
+      .current-status {
+        background: color($colors, brand_green);
+      }
+    }
+
+    &.-status-error {
+      .rak-uploading-file-icon {
+        color: color($colors, primary);
+      }
+
+      .rak-uploading-file-content {
+        h1 {
+          color: color($colors, primary);
+          span {
+            color: color($colors, brand_grey_1);
+          }
+        }
+
+        .current-status {
+          background: color($colors, primary);
+        }
+      }
+
+    }
+
+    &.-status-done {
+      .rak-uploading-file-icon {
+        color: color($colors, brand_grey_1);
+      }
+    }
+
+    .rak-uploading-file-icon {
+      max-width: 20rem;
+      min-width: 6rem;
+      flex-basis: auto;
+      flex-grow: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      ion-icon {
+        font-size: 5rem;
+      }
+    }
+    .rak-uploading-file-content {
+      flex: 1;
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.8rem;
+        color: color($colors, brand_grey_1);
+      }
+      h2 {
+        margin: 0;
+        padding: .5rem 0;
+        font-size: 1.3rem;
+        color: color($colors, brand_grey_2);
+
+      }
+
+    }
+
+    .rak-uploading-file-preloader {
+      padding: 0;
+      width: 100%;
+      background: color($colors, brand_grey_2);
+      height: .5rem;
+      .current-status {
+        height: .5rem;
+      }
+    }
+  }
+
+  .rak-link-big-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    a {
+      display: inline-block;
+      font-size: 4rem;
+      text-decoration: none;
+    }
+  }
+
+  .rak-margin-right {
+    margin-right: 1rem;
+  }
+
+  .item-ios.item-label-floating .text-input,
+  .item-label-floating .text-input-md {
+    margin-top: 4px;
+  }
+
+  .rak-button-full {
+    width: 100%;
+  }
+  .rak-button-active {
+    padding: 2.8rem;
+    font-weight: bold;
+    box-shadow: none;
+  }
+
+  .rak-button-outline {
+    @extend .rak-button-active;
+    background: #fff;
+  }
+
+}
+
+.demo {
+  margin-bottom: 40px;
+}
+
+
