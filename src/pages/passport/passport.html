@@ -55,7 +55,7 @@
 
   <!--Passport -->
 
-  <div class="page-body-start no-padding show-body height-100" *ngIf="showContent1"  >
+  <div class="page-body-start no-padding show-body height-100" *ngIf="showContent1">
     <div class="dummy-images-holder">
 
       <!--Passport 01-->
@@ -66,11 +66,11 @@
 
         <div class="flip-container " [ngClass]="{'flip': showImage2}">
           <div class="flipper">
-            <div class="front" (click)="gotoPhoto('showImage2')" >
+            <div class="front" (click)="gotoPhoto('showImage2')">
               <div class="image-frame passport-1">
               </div>
             </div>
-            <div class="back" (click)="showScanningFail()"  >
+            <div class="back" (click)="showScanningFail()">
               <div class="image-frame passport-2">
               </div>
             </div>
@@ -79,11 +79,6 @@
 
       </div>
 
-      <!--Passport 02-->
-      <!--<div class="dummy-images-top " >-->
-        <!--<div class="image-frame passport-2">-->
-        <!--</div>-->
-      <!--</div>-->
 
       <div class="dummy-images-button">
         <div class="rak-heading-3">Position your Passport (First Page) in the frame</div>
@@ -104,7 +99,7 @@
 
 
   <!--Scanning failed-->
-  <div class="page-body-start show-body"   *ngIf="showContent2">
+  <div class="page-body-start show-body" *ngIf="showContent2">
 
     <h1 class="rak-heading-2">Scanning failed </h1>
     <h1 class="rak-heading-2">Please fill in the information from your Passport </h1>
@@ -114,7 +109,6 @@
 
 
       <div class="rak-from-element-holder">
-
 
 
         <ion-item class="rak-input "
@@ -132,10 +126,6 @@
         </div>
 
 
-
-
-
-
         <ion-item class="rak-input"
                   [class.rak-input-error]="!DetailsOneForm.controls.passportNumber.valid && (DetailsOneForm.controls.passportNumber.dirty || submitAttempt)"
                   [class.rak-input-valid]="DetailsOneForm.controls.passportNumber.valid && (DetailsOneForm.controls.passportNumber.dirty || submitAttempt)"
@@ -149,9 +139,6 @@
              [class.showMessage]="!DetailsOneForm.controls.passportNumber.valid && (DetailsOneForm.controls.passportNumber.dirty || submitAttempt)">
           Please enter your Passport Type
         </div>
-
-
-
 
 
         <ion-item class="rak-input"
@@ -169,8 +156,6 @@
         </div>
 
 
-
-
         <ion-item class="rak-input"
                   [class.rak-input-error]="!DetailsOneForm.controls.passportFirstName.valid && (DetailsOneForm.controls.passportFirstName.dirty || submitAttempt)"
                   [class.rak-input-valid]="DetailsOneForm.controls.passportFirstName.valid && (DetailsOneForm.controls.passportFirstName.dirty || submitAttempt)"
@@ -186,7 +171,6 @@
         </div>
 
 
-
         <ion-item class="rak-input"
                   [class.rak-input-error]="!DetailsOneForm.controls.passportNationality.valid && (DetailsOneForm.controls.passportNationality.dirty || submitAttempt)"
                   [class.rak-input-valid]="DetailsOneForm.controls.passportNationality.valid && (DetailsOneForm.controls.passportNationality.dirty || submitAttempt)"
@@ -200,10 +184,6 @@
              [class.showMessage]="!DetailsOneForm.controls.passportNationality.valid && (DetailsOneForm.controls.passportNationality.dirty || submitAttempt)">
           Please enter your Nationality
         </div>
-
-
-
-
 
 
         <div class="rak-select-holder margin-top-3">
@@ -263,20 +243,17 @@
 
 
               <!--<div class="select-style">-->
-                <!--<select name="" id="passportGender"-->
-                        <!--[(ngModel)]="selectedGender"-->
-                        <!--formControlName="passportGender">-->
-                  <!--<option *ngFor="let item of genders" [ngValue]="item">{{item }}</option>-->
-                <!--</select>-->
+              <!--<select name="" id="passportGender"-->
+              <!--[(ngModel)]="selectedGender"-->
+              <!--formControlName="passportGender">-->
+              <!--<option *ngFor="let item of genders" [ngValue]="item">{{item }}</option>-->
+              <!--</select>-->
               <!--</div>-->
 
             </div>
 
           </div>
         </div>
-
-
-
 
 
         <ion-item class="rak-input"
@@ -294,50 +271,45 @@
         </div>
 
 
-
-
         <div class="rak-select-holder margin-top-3">
-        <div class="rak-select-label">
-          Passport issue Date
+          <div class="rak-select-label">
+            Passport issue Date
+          </div>
+
+          <div class="rak-select-items ">
+            <div class="rak-select-item-25">
+              <div class="select-style-1">
+                <ion-select [(ngModel)]="selectedPassportIssueDay"
+                            formControlName="passportIssueDay"
+                            [selectOptions]="selectDaysOptions">
+                  <ion-option *ngFor="let item of passportIssueDays" [value]="item">{{item }}</ion-option>
+                </ion-select>
+              </div>
+            </div>
+            <div class="rak-select-item-25">
+              <div class="select-style-1">
+                <ion-select [(ngModel)]="selectedPassportIssueMonth"
+                            formControlName="passportIssueMonth"
+                            [selectOptions]="selectedMonthOptions">
+                  <ion-option *ngFor="let item of passportIssueMonths" [value]="item">{{item}}</ion-option>
+                </ion-select>
+              </div>
+
+            </div>
+            <div class="rak-select-item-50">
+
+              <div class="select-style-1 select-style-1-last">
+
+                <ion-select [(ngModel)]="selectedPassportIssueYear"
+                            formControlName="passportIssueYear"
+                            [selectOptions]="selectedYearsOptions">
+                  <ion-option *ngFor="let item of passportIssueYears" [value]="item">{{item}}</ion-option>
+                </ion-select>
+              </div>
+
+            </div>
+          </div>
         </div>
-
-        <div class="rak-select-items ">
-          <div class="rak-select-item-25">
-            <div class="select-style-1">
-              <ion-select [(ngModel)]="selectedPassportIssueDay"
-                          formControlName="passportIssueDay"
-                          [selectOptions]="selectDaysOptions">
-                <ion-option *ngFor="let item of passportIssueDays" [value]="item">{{item }}</ion-option>
-              </ion-select>
-            </div>
-          </div>
-          <div class="rak-select-item-25">
-            <div class="select-style-1">
-              <ion-select [(ngModel)]="selectedPassportIssueMonth"
-                          formControlName="passportIssueMonth"
-                          [selectOptions]="selectedMonthOptions">
-                <ion-option *ngFor="let item of passportIssueMonths" [value]="item">{{item}}</ion-option>
-              </ion-select>
-            </div>
-
-          </div>
-          <div class="rak-select-item-50">
-
-            <div class="select-style-1 select-style-1-last">
-
-              <ion-select [(ngModel)]="selectedPassportIssueYear"
-                          formControlName="passportIssueYear"
-                          [selectOptions]="selectedYearsOptions">
-                <ion-option *ngFor="let item of passportIssueYears" [value]="item">{{item}}</ion-option>
-              </ion-select>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
-
 
 
         <div class="rak-select-holder margin-top-3">
@@ -382,11 +354,6 @@
             </div>
           </div>
         </div>
-
-
-
-
-
 
 
         <div class="rak-uploading-file -status-done show-uploader margin-top-3" *ngIf="step1">
@@ -450,8 +417,6 @@
             </div>
           </div>
         </div>
-
-
 
 
       </div>

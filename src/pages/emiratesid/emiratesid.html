@@ -78,15 +78,6 @@
         </div>
       </div>
 
-      <!--Picture 01 a-->
-      <!--<div class="dummy-images-top " (click)="gotoPhoto('showImage3')" [ngClass]="{'show-image': showImage2}">-->
-      <!--<div class="cam-error-message">-->
-      <!--The picture is blurry. try stabilising your camera-->
-      <!--</div>-->
-      <!--<div class="image-frame emirates-id-1a">-->
-      <!--</div>-->
-      <!--</div>-->
-
       <!--Picture 02-->
       <div class="dummy-images-top show-image"  *ngIf="showImageBlock2">
         <div class="flip-container " [ngClass]="{'flip': showImage4}">
@@ -105,18 +96,6 @@
           </div>
         </div>
       </div>
-
-      <!--<div class="dummy-images-top " (click)="gotoPhoto('showImage4')" [ngClass]="{'show-image': showImage3}">-->
-      <!--<div class="image-frame emirates-id-2">-->
-      <!--</div>-->
-      <!--</div>-->
-
-
-      <!--Picture 03-->
-      <!--<div class="dummy-images-top " (click)="gotoPhoto('showImage5')" [ngClass]="{'show-image': showImage4}">-->
-      <!--<div class="image-frame emirates-id-3">-->
-      <!--</div>-->
-      <!--</div>-->
 
 
 
@@ -152,30 +131,6 @@
       </div>
 
 
-
-
-
-      <!--<div class="dummy-images-top show-image"  >-->
-        <!--<div class="flip-container " [ngClass]="{'flip': showImage6}">-->
-          <!--<div class="flipper">-->
-            <!--<div class="front" (click)="gotoPhoto('showImage6')">-->
-              <!--<div class="image-frame emirates-id-2">-->
-              <!--</div>-->
-            <!--<div class="back" (click)="gotoPhoto('showImage7')">-->
-              <!--<div class="image-frame emirates-id-2">-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--</div>-->
-
-      <!--Picture 04-->
-      <!--<div class="dummy-images-top " (click)="showScanningFail()" [ngClass]="{'show-image': showImage5}">-->
-        <!--<div class="image-frame emirates-id-4">-->
-        <!--</div>-->
-      <!--</div>-->
-
       <div class="dummy-images-button">
         <div class="rak-heading-3" *ngIf="!frontCompleted">Position your Emirates ID (Front) in the frame</div>
         <div class="rak-heading-3" *ngIf="frontCompleted">Position your Emirates ID (Back) in the frame</div>
@@ -188,7 +143,9 @@
               </a>
 
               <a href="" (click)="doNothing($event)" *ngIf="frontCompleted">
-                <span> </span>
+                <span>
+                  <img src="assets/imgs/emirates-id-2.png" alt="" >
+                </span>
               </a>
 
 
