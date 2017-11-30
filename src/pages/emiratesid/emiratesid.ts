@@ -106,7 +106,7 @@ export class EmiratesidPage {
     }
 
     if (index === 'showImage6') {
-
+      this.showImage6 = true;
       setTimeout(() => {
         this.fontCompletedAndActive = true;
         this.showImageBlock3 = false;

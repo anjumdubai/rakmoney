@@ -1,6 +1,6 @@
 {
   "name": "rak-money-transfer",
-  "app_id": "d98fd396",
+  "app_id": "3b281fdb",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
