@@ -1,0 +1,52 @@
+<div class="rak-header-holder" padding>
+
+  <h3 class="rak-header-navigation">
+    <span (click)="goBack()"><i class="rakiconrak-back-arrow"></i></span>
+    {{title}}
+  </h3>
+
+
+  <ul class="rak-breadcrumbs">
+    <li [ngClass]="{'rak-breadcrumbs-active': activePage >= 1 }">
+      <!-- rak-breadcrumbs-active -->
+      <div>
+        <p>
+          <span>01</span>
+          <b>{{'BREADCRUMBS.DETAILS' | translate}}</b>
+        </p>
+      </div>
+    </li>
+    <li [ngClass]="{'rak-breadcrumbs-active': activePage >= 2  }">
+      <div>
+        <p>
+          <span>02</span>
+          <b>{{'BREADCRUMBS.EMIRATES_ID' | translate}}</b>
+        </p>
+      </div>
+    </li>
+    <li [ngClass]="{'rak-breadcrumbs-active': activePage >= 3  }">
+      <div>
+        <p>
+          <span>03</span>
+          <b>{{'BREADCRUMBS.PASSPORT' | translate}}</b>
+        </p>
+      </div>
+    </li>
+    <li [ngClass]="{'rak-breadcrumbs-active': activePage >= 4  }">
+      <div>
+        <p>
+          <span>04</span>
+          <b>{{'BREADCRUMBS.PHOTO' | translate}}</b>
+        </p>
+      </div>
+    </li>
+    <li [ngClass]="{'rak-breadcrumbs-active': activePage >=  5 }">
+      <div>
+        <p>
+          <span>05</span>
+          <b>{{'BREADCRUMBS.ACCOUNT' | translate}}</b>
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

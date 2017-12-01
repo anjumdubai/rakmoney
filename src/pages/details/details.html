@@ -1,65 +1,12 @@
 <ion-content>
 
-
-  <div class="rak-header-holder" padding>
-
-    <h3 class="rak-header-navigation">
-      <span (click)="goBack()"><i class="rakiconrak-back-arrow"></i></span>
-      Details
-    </h3>
-
-
-    <ul class="rak-breadcrumbs">
-      <li class="">
-        <!-- rak-breadcrumbs-active -->
-        <div>
-          <a href="" (click)="doNothing($event)">
-            <span>01</span>
-            <b>Details</b>
-          </a>
-        </div>
-      </li>
-      <li class="">
-        <div>
-          <a href="" (click)="doNothing($event)">
-            <span>02</span>
-            <b>Emirates ID</b>
-          </a>
-        </div>
-      </li>
-      <li class=" ">
-        <div>
-          <a href="" (click)="doNothing($event)">
-            <span>03</span>
-            <b>Passport</b>
-          </a>
-        </div>
-      </li>
-      <li class=" ">
-        <div>
-          <a href="" (click)="doNothing($event)">
-            <span>04</span>
-            <b>Photo</b>
-          </a>
-        </div>
-      </li>
-      <li>
-        <div>
-          <a href="" (click)="doNothing($event)">
-            <span>05</span>
-            <b>Account</b>
-          </a>
-        </div>
-      </li>
-    </ul>
-  </div>
-
+<header-component [title]="pageTitle" [activePage]="4" ></header-component>
 
   <!--Header Ends-->
   <div class="page-body-start" [ngClass]="{'show-body': showContentDetails}"  >
-    <h1 class="rak-heading-2">Enter your details here</h1>
+    <h1 class="rak-heading-2">{{ 'DETAILS.TITLE' | translate }}</h1>
 
-    <p *ngIf="submitAttempt" class="submitAttempt">Please fill out all details accurately.</p>
+    <p *ngIf="submitAttempt" class="submitAttempt">{{ onSubmitError | translate }}</p>
 
     <form [formGroup]="DetailsOneForm">
 

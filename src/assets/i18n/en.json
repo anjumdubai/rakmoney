@@ -1,0 +1,16 @@
+{
+  "BREADCRUMBS": {
+    "DETAILS": "Details",
+    "EMIRATES_ID": "Emirates ID",
+    "PASSPORT": "Passport",
+    "PHOTO": "Photo",
+    "ACCOUNT": "Account"
+  },
+  "SUBMIT": {
+    "ERROR": "Please fill out all details accurately."
+  },
+  "DETAILS": {
+    "TITLE": "Enter your details here",
+    "NAME": "Name as per Emireate ID"
+  }
+}

@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import {TranslateService} from '@ngx-translate/core';
 
 import {regexValidators, emailValidator} from "../utils/validator";
 import {EmiratesidPage} from "../emiratesid/emiratesid";
@@ -16,13 +16,14 @@ import {MyDataService} from "../utils/data";
 })
 export class DetailsPage {
 
-
   DetailsOneForm: any = {};
   submitAttempt: boolean = false;
   showContentDetails = true;
   showContentActivation = false;
   validator;
-  selectPhonePre
+  selectPhonePre;
+  pageTitle ;
+  onSubmitError;
 
   selectedCountryCodes;
   countryCodes = [
@@ -39,11 +40,12 @@ export class DetailsPage {
 
   constructor(public navCtrl: NavController,
               public myDataService: MyDataService,
+              public translateService: TranslateService,
               public formBuilder: FormBuilder,
               public navParams: NavParams) {
 
     this.selectedCountryCodes = this.countryCodes[0];
-
+    this.doTranslation();
 
 
     this.selectPhonePre = {
@@ -78,8 +80,15 @@ export class DetailsPage {
 
 
   ionViewDidLoad() {
+  }
 
-
+  doTranslation(){
+    this.translateService.get('BREADCRUMBS').subscribe((res: any) => {
+      this.pageTitle = res.DETAILS;
+    });
+    this.translateService.get('SUBMIT').subscribe((res: any) => {
+      this.onSubmitError = res.ERROR;
+    });
   }
 
   goBack() {

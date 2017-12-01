@@ -1,0 +1,32 @@
+html[dir=rtl] {
+  .rak-breadcrumbs li div:after{
+    right: 50%;
+    left: inherit;
+  }
+  .rak-breadcrumbs li div:before{
+    right: 0;
+    left: inherit;
+  }
+  .rak-breadcrumbs li:first-child div:before{
+    right: 50%;
+    left: inherit;
+  }
+  .rak-breadcrumbs li.rak-breadcrumbs-active div:after,
+  .rak-breadcrumbs li.rak-breadcrumbs-active div:after{
+    margin-right: 17px;
+    margin-left: inherit;
+  }
+  .rak-header-holder .rak-header-navigation span{
+    right: 0;
+    left: inherit;
+  }
+
+  .rakiconrak-back-arrow:before{
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    display: inline-block;
+  }
+  .rak-breadcrumbs li p b{
+    white-space: nowrap;
+  }
+}

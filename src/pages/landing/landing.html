@@ -7,15 +7,26 @@
         <h1><span>Rak Money Transfer</span></h1>
       </div>
 
-      <h2>Select a language</h2>
+      <h2>Select a language </h2>
+
+      <!--<label>-->
+        <!--{{ 'HOME.SELECT' | translate }}-->
+        <!--<select #langSelect (change)="translate.use(langSelect.value)">-->
+          <!--<option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>-->
+        <!--</select>-->
+      <!--</label>-->
+
+
       <ul>
         <li>
           <button ion-button round color="primary" class="rak-button-outline rak-button-full" outline
-          (click)="goToDetailPage('english')"
+          (click)="goToDetailPage('en')"
           >English</button>
         </li>
         <li>
-          <button ion-button round color="primary" class="rak-button-outline rak-button-full" outline>العربية</button>
+          <button ion-button round color="primary" class="rak-button-outline rak-button-full"
+                  (click)="goToDetailPage('ur')"
+                  outline>العربية</button>
         </li>
         <li>
           <button ion-button round color="primary" class="rak-button-outline rak-button-full" outline>हिन्दी</button>

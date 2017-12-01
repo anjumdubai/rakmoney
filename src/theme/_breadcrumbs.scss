@@ -64,11 +64,8 @@ $rak-bc-circle-height: 34px;
       }
     }
 
-    a {
-      &:hover {
-        opacity: 1;
-      }
-
+    p {
+      margin: 0;
       display: inline-flex;
       flex-direction: column;
       position: relative;
@@ -118,7 +115,8 @@ $rak-bc-circle-height: 34px;
     }
 
     &:first-child,
-    &.rak-breadcrumbs-live {
+    &.rak-breadcrumbs-live,
+    &.rak-breadcrumbs-active + li{
       b {
         color: color($colors, brand_grey_1);
       }
@@ -128,7 +126,7 @@ $rak-bc-circle-height: 34px;
     }
 
     &:last-child {
-      a {
+      p {
         display: inline-flex;
         flex-direction: column;
         position: relative;
@@ -136,8 +134,9 @@ $rak-bc-circle-height: 34px;
       }
     }
 
-    &.rak-breadcrumbs-active {
-      a span {
+    &.rak-breadcrumbs-active,
+    &.rak-breadcrumbs-active  {
+      p span {
         color: #fff;
         &:after {
           background: color($colors, primary);

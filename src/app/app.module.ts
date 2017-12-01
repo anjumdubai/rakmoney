@@ -1,25 +1,39 @@
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
 
 import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
 import { CoolStorageModule } from 'angular2-cool-storage';
+import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+
+import {MyDataService} from "../pages/utils/data";
+import {AppSettingsService} from "../pages/utils/app.setting";
+
 
 
 
 import {RakMoneyApp} from './app.component';
-import {UiElements} from '../pages/ui-elements/ui-elements'
 import {LandingPage} from "../pages/landing/landing";
 import {DetailsPage} from "../pages/details/details";
-
 import {EmiratesidPage} from "../pages/emiratesid/emiratesid";
 import {PassportPage} from "../pages/passport/passport";
 import {PhotoPage} from "../pages/photo/photo";
 import {AccountPage} from "../pages/account/account";
 import {ModalPage} from "../pages/modal/modal";
 
-import {MyDataService} from "../pages/utils/data";
+
+import {ComponentsModule} from "../components/components.module";
+
+
 
 const myPages: any = [
   RakMoneyApp,
@@ -39,8 +53,17 @@ const myPages: any = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ComponentsModule,
     CoolStorageModule,
-    IonicModule.forRoot(RakMoneyApp)
+    IonicModule.forRoot(RakMoneyApp),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -50,6 +73,7 @@ const myPages: any = [
     StatusBar,
     SplashScreen,
     MyDataService,
+    AppSettingsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
